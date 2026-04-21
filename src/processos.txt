@@ -1,0 +1,1 @@
+PID;Chegada;Burst Total;Prioridade;[Instantes de IO]
