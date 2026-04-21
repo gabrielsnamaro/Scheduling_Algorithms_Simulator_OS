@@ -20,18 +20,14 @@ public class Leitor {
         try {
             leitor = new Scanner(arquivo);
 
+            while(leitor.hasNextLine())
+                lista.add(new Processo(leitor.nextLine()));
+
             leitor.close();
         } catch (FileNotFoundException e) {
             System.out.println("Deu pau");
         }
 
-        return null;
-    }
-
-    private static Processo lerProcesso(File arquivo, Scanner leitor) {
-        
-
-
-        return null;
+        return lista;
     }
 }

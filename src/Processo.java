@@ -1,4 +1,6 @@
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Processo {
     private int pid;
@@ -27,12 +29,13 @@ public class Processo {
             Integer.parseInt(dados[1]), 
             Integer.parseInt(dados[2]), 
             EPrioridade.doValor(Integer.parseInt(dados[3])), 
-            extrairInstantes(dados[4])
+            dados.length == 5 ? extrairInstantes(dados[4]) : new LinkedList<>()
         );
     }
 
     private LinkedList<Integer> extrairInstantes(String linha) {
         String[] instantes = linha.split(",");
+
         LinkedList<Integer> resultado = new LinkedList<>();
         
         for(int i = 0; i < instantes.length; i++) {
@@ -41,4 +44,27 @@ public class Processo {
 
         return resultado;
     }
+
+    private String instantesToString() {
+        StringBuilder builder = new StringBuilder();
+
+        for(int i = 0; i < instantesIO.size(); i++) {
+            String pontuacao = i == instantesIO.size() - 1 
+                ? ". "
+                : ", ";  
+
+            builder.append(instantesIO.get(i) + pontuacao);
+        }
+
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "PID: %02d | Chegada: %d | Burst Total: %d | Prioridade: %s | Instantes: %s", pid, instanteDeChegada, burstTotal, prioridade.name(), instantesToString()
+        );
+    }
+
+
 }
