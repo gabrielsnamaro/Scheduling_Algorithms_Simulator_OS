@@ -3,18 +3,25 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Processo {
+    public static final int TEMPO_BLOQUEIO_IO = 5;
+
     private int pid;
     private int instanteDeChegada;
     private int burstTotal;
+    private int tempoExecucao;
     private EPrioridade prioridade;
     private LinkedList<Integer> instantesIO;
 
     private void init(int pid, int instanteDeChegada, int burstTotal, EPrioridade prioridade, LinkedList<Integer> instantesIO) {
+        LinkedList<Integer> instantesOrdenados = new LinkedList<>(instantesIO);
+        instantesOrdenados.sort((i1, i2) -> Integer.compare(i1, i2));
+        
         this.pid = pid;
         this.instanteDeChegada = instanteDeChegada;
         this.burstTotal = burstTotal;
         this.prioridade = prioridade;
-        this.instantesIO = instantesIO;
+        this.instantesIO = instantesOrdenados;
+        this.tempoExecucao = 0;
     }
 
     public Processo(int pid, int instanteDeChegada, int burstTotal, EPrioridade prioridade, LinkedList<Integer> instantesIO) {
@@ -59,11 +66,36 @@ public class Processo {
         return builder.toString();
     }
 
+    private int ultimoIO(int instanteAtual) {
+        int resultado = instanteDeChegada;
+
+        int i = 0;
+        while((instanteAtual + instantesIO.get(i)) <= instanteAtual) {
+            resultado = instantesIO.get(i);
+            i++;
+        }
+
+        return resultado;
+    }
+
+    public Boolean emEspera(int instanteAtual) {
+        return instanteAtual >= instanteDeChegada
+            && instanteAtual < ultimoIO(instanteAtual) + TEMPO_BLOQUEIO_IO;
+    }
+
     @Override
     public String toString() {
         return String.format(
             "PID: %02d | Chegada: %d | Burst Total: %d | Prioridade: %s | Instantes: %s", pid, instanteDeChegada, burstTotal, prioridade.name(), instantesToString()
         );
+    }
+
+    public int getBurstTotal() {
+        return burstTotal;
+    }
+
+    public int getPid() {
+        return pid;
     }
 
 

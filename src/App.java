@@ -3,9 +3,9 @@ import java.util.LinkedList;
 public class App {
     public static void main(String[] args) {
         LinkedList<Processo> lista = Leitor.doArquivo();
+    
+        Escalonador escalonador = new ShortestRemainingTimeFirst();
 
-        for(Processo processo : lista) {
-            System.out.println(processo.toString());
-        }
+        System.out.println(escalonador.escalonar(lista));
     }
 }
