@@ -52,6 +52,26 @@ public class Processo {
         return resultado;
     }
 
+    private int ultimoIO(int instanteAtual) {
+        int resultado = -1;
+
+        int i = 0;
+        while(i < instantesIO.size() && (instanteDeChegada + instantesIO.get(i)) <= instanteAtual) {
+            resultado = instantesIO.get(i);
+            i++;
+        }
+
+        return resultado;
+    }
+
+    public Boolean emEspera(int instanteAtual) {
+        int io = ultimoIO(instanteAtual);
+
+        return instanteAtual >= instanteDeChegada
+            && io != -1
+            && instanteAtual < instanteDeChegada + io + TEMPO_BLOQUEIO_IO;
+    }
+
     private String instantesToString() {
         StringBuilder builder = new StringBuilder();
 
@@ -66,22 +86,6 @@ public class Processo {
         return builder.toString();
     }
 
-    private int ultimoIO(int instanteAtual) {
-        int resultado = instanteDeChegada;
-
-        int i = 0;
-        while((instanteAtual + instantesIO.get(i)) <= instanteAtual) {
-            resultado = instantesIO.get(i);
-            i++;
-        }
-
-        return resultado;
-    }
-
-    public Boolean emEspera(int instanteAtual) {
-        return instanteAtual >= instanteDeChegada
-            && instanteAtual < ultimoIO(instanteAtual) + TEMPO_BLOQUEIO_IO;
-    }
 
     @Override
     public String toString() {
