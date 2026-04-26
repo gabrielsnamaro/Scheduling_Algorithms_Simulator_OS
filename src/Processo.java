@@ -1,6 +1,7 @@
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Processo {
     public static final int TEMPO_BLOQUEIO_IO = 5;
@@ -10,6 +11,7 @@ public class Processo {
     private int burstTotal;
     private int burstReal;
     private int quandoVoltaDeIO;
+    private int indiceUltimoIOFeito;
     private EPrioridade prioridade;
     private LinkedList<Integer> instantesIO;
 
@@ -25,6 +27,8 @@ public class Processo {
         this.quandoVoltaDeIO = -1;
 
         this.burstReal = this.burstTotal;
+        this.quandoVoltaDeIO = -1;
+        this.indiceUltimoIOFeito = -1;
     }
 
     public Processo(int pid, int instanteDeChegada, int burstTotal, EPrioridade prioridade, LinkedList<Integer> instantesIO) {
@@ -56,11 +60,11 @@ public class Processo {
     }
 
     public void decrementarBurst(int qtd, int instanteAtual) throws InterrupcaoEncerramento {
-        if (burstReal - qtd >= 0) {
+        if (burstReal - qtd > 0) {
             burstReal -= qtd;
         } else {
+            int novoInstante = instanteAtual + burstReal;
             burstReal = 0;
-            int novoInstante = qtd - burstReal;
             throw new InterrupcaoEncerramento("Processo " + pid + " encerrado. ", novoInstante);
         }
     }
@@ -80,14 +84,14 @@ public class Processo {
         int avancoReal = segundos;
 
         if(proxIO != -1 && instanteAtual + segundos >= proxIO) {
-            avancoReal = proxIO - burstReal;
+            avancoReal = proxIO - (burstTotal - burstReal);
             quandoVoltaDeIO = instanteAtual + avancoReal + TEMPO_BLOQUEIO_IO;
-            throw new InterrupcaoIO("Processo fez IO! ", avancoReal);
+            decrementarBurst(avancoReal, instanteAtual);
+            throw new InterrupcaoIO("Processo " + pid + " fez IO! ", instanteAtual + avancoReal);
         } else {
+            decrementarBurst(avancoReal, instanteAtual);
             avancoReal = segundos;
         }
-
-        decrementarBurst(avancoReal, instanteAtual);
 
         return instanteAtual + avancoReal;
     }
@@ -95,10 +99,10 @@ public class Processo {
     private int proximoInstanteDeIO() {
         int resultado = -1;
 
-        int i = 0;
-        while(i < instantesIO.size() && burstReal <= instantesIO.get(i)) {
+        int i = instantesIO.size() - 1;
+        while(i >= 0 && instantesIO.get(i) > (burstTotal - burstReal)) {
             resultado = instantesIO.get(i);
-            i++;
+            i--;
         }
 
         return resultado;
@@ -121,11 +125,18 @@ public class Processo {
     @Override
     public String toString() {
         return String.format(
-            "PID: %02d | Chegada: %d | Burst Total: %d | Prioridade: %s | Instantes: %s", pid, instanteDeChegada, burstReal, prioridade.name(), instantesToString()
+            "PID: %02d | Chegada: %d | Burst Total: %d | Prioridade: %s | Instantes: %s", pid, instanteDeChegada, burstTotal, prioridade.name(), instantesToString()
         );
     }
 
+    public String estadoAtual() {
+        return String.format(
+            "PID: %02d | Chegada: %d | Burst Restante: %d", pid, instanteDeChegada, burstReal
+        );  
+    }
+
     public int proximoRetornoDeIO() {
+        if(burstReal == 0) return -1;
         return quandoVoltaDeIO;
     }
 
@@ -140,6 +151,7 @@ public class Processo {
     public int getInstanteChegada() {
         return instanteDeChegada;
     }
+
 
 
 

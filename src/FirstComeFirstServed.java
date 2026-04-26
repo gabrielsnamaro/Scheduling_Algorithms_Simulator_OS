@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class FirstComeFirstServed extends Escalonador {
 
@@ -11,33 +12,63 @@ public class FirstComeFirstServed extends Escalonador {
     @Override
     public void escalonar() {
         Queue<Processo> proximosProcessos = processosOrdenados();
-        Queue<Processo> processosEmExecucao = new LinkedList<>();
+        Queue<Processo> processosProntos = new LinkedList<>();
+        Queue<Processo> processosEmEspera = new LinkedList<>();
 
         int instanteAtual = 0;
-        while(processosEmExecucao.size() >= 0) {
-            adicionarProcessosEmExecucao(proximosProcessos, processosEmExecucao, instanteAtual);
+        adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
+        adicionarProcessosDaEspera(processosEmEspera, processosProntos, instanteAtual);
 
-            if(!processosEmEspera.isEmpty() && processosEmEspera.element().proximoRetornoDeIO() <= instanteAtual)
-                processosEmExecucao.add(processosEmEspera.poll());
+        while((proximosProcessos.size() + processosEmEspera.size() + processosProntos.size()) > 0) {
+            Execucao execucaoAtual = new Execucao();
 
-            Processo atual = processosEmExecucao.poll();
+            execucaoAtual.setInstanteInicial(instanteAtual);
 
-            int tempoAvanco = atual.getBurstReal();
+            if(!processosProntos.isEmpty()) {
+                Processo atual = processosProntos.element();
+                int tempoAvanco = atual.getBurstReal();
 
-            try {
-                instanteAtual = atual.avancar(tempoAvanco, instanteAtual);
-            } catch (InterrupcaoIO e) {
-                instanteAtual = e.getNovoInstante();
-                processosEmEspera.add(atual);
-            } catch (InterrupcaoEncerramento e) {
-                instanteAtual = e.getNovoInstante();
+                execucaoAtual.setFilaDePronto(processosProntos);
+                execucaoAtual.setProcesso(atual);
+
+                atual = processosProntos.poll();
+                try {
+                    instanteAtual = atual.avancar(tempoAvanco, instanteAtual);
+                } catch (InterrupcaoIO e) {
+                    instanteAtual = e.getNovoInstante();
+                    processosEmEspera.add(atual);
+                    execucaoAtual.reportarIO();
+                } catch (InterrupcaoEncerramento e) {
+                    instanteAtual = e.getNovoInstante();
+                    execucaoAtual.reportarFinalizado();
+                }
+            } else {
+                execucaoAtual.reportarOcio();
+                instanteAtual++;
             }
+
+            execucaoAtual.setInstanteFinal(instanteAtual);
+
+            execucaoAtual.imprimir();
+
+            esperarEnter();
+
+            adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
+            adicionarProcessosDaEspera(processosEmEspera, processosProntos, instanteAtual);
         }
     }
     
-    private void adicionarProcessosEmExecucao(Queue<Processo> proximosProcessos, Queue<Processo> filaDeExecucao, int instanteAtual) {
+    private void adicionarProcessosEmChegada(Queue<Processo> proximosProcessos, Queue<Processo> filaDeExecucao, int instanteAtual) {
         while(!proximosProcessos.isEmpty() && proximosProcessos.element().getInstanteChegada() <= instanteAtual)
             filaDeExecucao.add(proximosProcessos.poll());
+    }
+
+    private void adicionarProcessosDaEspera(Queue<Processo> filaDeEspera, Queue<Processo> filaDeExecucao, int instanteAtual) {
+
+        while(!filaDeEspera.isEmpty() 
+            && filaDeEspera.element().proximoRetornoDeIO() != -1
+            && filaDeEspera.element().proximoRetornoDeIO() <= instanteAtual)
+            filaDeExecucao.add(filaDeEspera.poll());
     }
 
     private Queue<Processo> processosOrdenados() {
@@ -49,7 +80,17 @@ public class FirstComeFirstServed extends Escalonador {
 
     private static void printList(Queue<Processo> lista) {
         for(Processo p : lista) {
-            System.out.println(p);
+            System.out.print(p.getPid() + " | ");
         }
+
+        System.out.println();
+    }
+
+    // APAGAR
+    public static void esperarEnter() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Pressione Enter para continuar...");
+        scanner.nextLine();  // Aguarda o Enter
+        // Não precisa fechar o scanner se ele for usado novamente depois
     }
 }
