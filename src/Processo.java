@@ -86,6 +86,20 @@ public class Processo {
         return builder.toString();
     }
 
+    public void decrementarBurst() {
+        if (burstTotal > 0) {
+            burstTotal--;
+        }
+    }
+
+    public void decrementarIO() {
+        for (int i = 0; i < instantesIO.size(); i++) {
+            if (instantesIO.get(i) > 0) {
+                instantesIO.set(i, instantesIO.get(i) - 1);
+            }
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -102,5 +116,8 @@ public class Processo {
         return pid;
     }
 
+    public int getInstanteChegada() {
+        return instanteDeChegada;
+    }
 
 }
