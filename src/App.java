@@ -1,14 +1,18 @@
 import java.util.LinkedList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
         LinkedList<Processo> lista = Leitor.doArquivo();
-    
-        Escalonador srtf = new ShortestRemainingTimeFirst();
-        Escalonador fcfs = new FirstComeFirstServed();
 
-        System.out.println("Shortest Remaining Time First" + srtf.escalonar(lista));
-        System.out.println("First Come First Served" + fcfs.escalonar(lista));
+        Escalonador fcfs = new FirstComeFirstServed(lista);
 
+        fcfs.escalonar();
+    }
+
+    private static void printList(List<Processo> lista) {
+        for(Processo p : lista) {
+            System.out.println(p);
+        }
     }
 }

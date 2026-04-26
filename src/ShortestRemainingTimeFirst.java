@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class ShortestRemainingTimeFirst implements Escalonador {
+public class ShortestRemainingTimeFirst extends Escalonador {
 
     @Override
     public Escalonamento escalonar(LinkedList<Processo> processos) {
@@ -8,7 +8,7 @@ public class ShortestRemainingTimeFirst implements Escalonador {
 
         LinkedList<Processo> processosOrdenados = new LinkedList<>(processos);
         processosOrdenados.sort(
-            (p1, p2) -> Integer.compare(p1.getBurstTotal(), p2.getBurstTotal())
+            (p1, p2) -> Integer.compare(p1.getBurstReal(), p2.getBurstReal())
         );
 
         for(int i = 0; i < processosOrdenados.size(); i++) {
