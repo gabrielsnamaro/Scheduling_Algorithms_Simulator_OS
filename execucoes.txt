@@ -1,0 +1,206 @@
+********** 0s até 3s **********
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 9
+* Fila de pronto: 1, 5. 
+* Fez IO!
+
+********** 3s até 5s **********
+* Processo executado: PID: 05 | Chegada: 0 | Burst Restante: 4
+* Fila de pronto: 5, 3, 8, 2, 10, 6. 
+* Fez IO!
+
+********** 5s até 13s **********
+* Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
+* Fila de pronto: 3, 8, 2, 10, 6, 4, 7. 
+* Processo terminou!
+
+********** 13s até 14s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 9
+* Fila de pronto: 8, 2, 10, 6, 4, 7, 11, 9, 1, 5. 
+* Fez IO!
+
+********** 14s até 19s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 15
+* Fila de pronto: 2, 10, 6, 4, 7, 11, 9, 1, 5. 
+* Fez IO!
+
+********** 19s até 22s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 19
+* Fila de pronto: 10, 6, 4, 7, 11, 9, 1, 5, 8. 
+* Fez IO!
+
+********** 22s até 28s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 12
+* Fila de pronto: 6, 4, 7, 11, 9, 1, 5, 8. 
+* Fez IO!
+
+********** 28s até 35s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 18
+* Fila de pronto: 4, 7, 11, 9, 1, 5, 8, 2, 10. 
+* Fez IO!
+
+********** 35s até 44s **********
+* Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 21
+* Fila de pronto: 7, 11, 9, 1, 5, 8, 2, 10, 6. 
+* Fez IO!
+
+********** 44s até 67s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 20
+* Fila de pronto: 11, 9, 1, 5, 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 67s até 71s **********
+* Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 10
+* Fila de pronto: 9, 1, 5, 8, 2, 10, 6, 4, 7. 
+* Fez IO!
+
+********** 71s até 76s **********
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 4
+* Fila de pronto: 1, 5, 8, 2, 10, 6, 4, 7. 
+* Fez IO!
+
+********** 76s até 78s **********
+* Processo executado: PID: 05 | Chegada: 0 | Burst Restante: 2
+* Fila de pronto: 5, 8, 2, 10, 6, 4, 7, 11, 9. 
+* Fez IO!
+
+********** 78s até 82s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 5
+* Fila de pronto: 8, 2, 10, 6, 4, 7, 11, 9. 
+* Fez IO!
+
+********** 82s até 87s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 10
+* Fila de pronto: 2, 10, 6, 4, 7, 11, 9, 1. 
+* Fez IO!
+
+********** 87s até 92s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 14
+* Fila de pronto: 10, 6, 4, 7, 11, 9, 1, 5, 8. 
+* Fez IO!
+
+********** 92s até 98s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 6
+* Fila de pronto: 6, 4, 7, 11, 9, 1, 5, 8, 2. 
+* Fez IO!
+
+********** 98s até 105s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 11
+* Fila de pronto: 4, 7, 11, 9, 1, 5, 8, 2, 10. 
+* Fez IO!
+
+********** 105s até 114s **********
+* Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 12
+* Fila de pronto: 7, 11, 9, 1, 5, 8, 2, 10, 6. 
+* Fez IO!
+
+********** 114s até 115s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 19
+* Fila de pronto: 11, 9, 1, 5, 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 115s até 122s **********
+* Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 3
+* Fila de pronto: 9, 1, 5, 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 122s até 126s **********
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
+* Fila de pronto: 1, 5, 8, 2, 10, 6, 4, 7, 11. 
+* Processo terminou!
+
+********** 126s até 128s **********
+* Processo executado: PID: 05 | Chegada: 0 | Burst Restante: 0
+* Fila de pronto: 5, 8, 2, 10, 6, 4, 7, 11. 
+* Processo terminou!
+
+********** 128s até 132s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 1
+* Fila de pronto: 8, 2, 10, 6, 4, 7, 11, 9. 
+* Fez IO!
+
+********** 132s até 137s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 5
+* Fila de pronto: 2, 10, 6, 4, 7, 11, 9. 
+* Fez IO!
+
+********** 137s até 142s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 9
+* Fila de pronto: 10, 6, 4, 7, 11, 9, 8. 
+* Fez IO!
+
+********** 142s até 148s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 0
+* Fila de pronto: 6, 4, 7, 11, 9, 8, 2. 
+* Processo terminou!
+
+********** 148s até 155s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 4
+* Fila de pronto: 4, 7, 11, 9, 8, 2, 10. 
+* Fez IO!
+
+********** 155s até 164s **********
+* Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 3
+* Fila de pronto: 7, 11, 9, 8, 2, 10. 
+* Fez IO!
+
+********** 164s até 167s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 16
+* Fila de pronto: 11, 9, 8, 2, 10, 4. 
+* Fez IO!
+
+********** 167s até 170s **********
+* Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 0
+* Fila de pronto: 9, 8, 2, 10, 4. 
+* Processo terminou!
+
+********** 170s até 171s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 0
+* Fila de pronto: 8, 2, 10, 4, 7. 
+* Processo terminou!
+
+********** 171s até 176s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 0
+* Fila de pronto: 2, 10, 4, 7. 
+* Processo terminou!
+
+********** 176s até 182s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 3
+* Fila de pronto: 10, 4, 7, 11. 
+* Fez IO!
+
+********** 182s até 186s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 0
+* Fila de pronto: 4, 7, 11. 
+* Processo terminou!
+
+********** 186s até 189s **********
+* Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 0
+* Fila de pronto: 7, 11. 
+* Processo terminou!
+
+********** 189s até 201s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 4
+* Fila de pronto: 11, 10. 
+* Fez IO!
+
+********** 201s até 204s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 0
+* Fila de pronto: 10. 
+* Processo terminou!
+
+********** 204s até 206s **********
+* CPU ociosa...
+
+********** 206s até 209s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 1
+* Fila de pronto: 11. 
+* Fez IO!
+
+********** 209s até 214s **********
+* CPU ociosa...
+
+********** 214s até 215s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 0
+* Fila de pronto: 11. 
+* Processo terminou!
+

@@ -1,7 +1,5 @@
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class FirstComeFirstServed extends Escalonador {
 
@@ -44,14 +42,21 @@ public class FirstComeFirstServed extends Escalonador {
                 }
             } else {
                 execucaoAtual.reportarOcio();
-                instanteAtual++;
+
+                instanteAtual += Math.min(
+                    processosEmEspera.isEmpty()
+                        ? Integer.MAX_VALUE
+                        : processosEmEspera.element().proximoRetornoDeIO(),
+                    proximosProcessos.isEmpty()
+                        ? Integer.MAX_VALUE
+                        : proximosProcessos.element().getInstanteChegada()
+                ) - instanteAtual;
             }
 
             execucaoAtual.setInstanteFinal(instanteAtual);
 
             execucaoAtual.imprimir();
-
-            esperarEnter();
+            Escritor.registrar(execucaoAtual.registro());
 
             adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
             adicionarProcessosDaEspera(processosEmEspera, processosProntos, instanteAtual);
@@ -86,11 +91,11 @@ public class FirstComeFirstServed extends Escalonador {
         System.out.println();
     }
 
-    // APAGAR
+    /* APAGAR
     public static void esperarEnter() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Pressione Enter para continuar...");
         scanner.nextLine();  // Aguarda o Enter
         // Não precisa fechar o scanner se ele for usado novamente depois
-    }
+    }*/
 }

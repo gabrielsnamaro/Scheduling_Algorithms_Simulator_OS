@@ -61,8 +61,11 @@ public abstract class Escalonador {
         }
 
         public void imprimir() {
-            String registro = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            registro += "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
+            System.out.println(registro());
+        }
+
+        public String registro() {
+            String registro = "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
             
             if(!cpuOciosa) {
                 registro += "* Processo executado: " + processo.estadoAtual() + "\n* Fila de pronto: " + filaDePronto + "\n";
@@ -76,7 +79,9 @@ public abstract class Escalonador {
                 registro += "* CPU ociosa...";
             }
 
-            System.out.println(registro);
+            registro += "\n\n";
+
+            return registro;
         }
     }
 
