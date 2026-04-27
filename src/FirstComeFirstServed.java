@@ -15,7 +15,6 @@ public class FirstComeFirstServed extends Escalonador {
 
         int instanteAtual = 0;
         adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
-        adicionarProcessosDaEspera(processosEmEspera, processosProntos, instanteAtual);
 
         while((proximosProcessos.size() + processosEmEspera.size() + processosProntos.size()) > 0) {
             Execucao execucaoAtual = new Execucao();
@@ -23,13 +22,12 @@ public class FirstComeFirstServed extends Escalonador {
             execucaoAtual.setInstanteInicial(instanteAtual);
 
             if(!processosProntos.isEmpty()) {
-                Processo atual = processosProntos.element();
-                int tempoAvanco = atual.getBurstReal();
+                Processo atual = processosProntos.poll();
+                int tempoAvanco = atual.getBurstRestante();
 
                 execucaoAtual.setFilaDePronto(processosProntos);
                 execucaoAtual.setProcesso(atual);
 
-                atual = processosProntos.poll();
                 try {
                     instanteAtual = atual.avancar(tempoAvanco, instanteAtual);
                 } catch (InterrupcaoIO e) {
