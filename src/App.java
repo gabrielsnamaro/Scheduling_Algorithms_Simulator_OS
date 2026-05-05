@@ -5,9 +5,9 @@ public class App {
     public static void main(String[] args) {
         LinkedList<Processo> lista = Leitor.doArquivo();
 
-        Escalonador fcfs = new FirstComeFirstServed(lista);
+        Escalonador escalonador = new MultilevelQueue(lista);
 
-        fcfs.escalonar();
+        escalonador.escalonar();
     }
 
     private static void printList(List<Processo> lista) {
