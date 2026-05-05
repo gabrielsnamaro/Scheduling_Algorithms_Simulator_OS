@@ -74,13 +74,6 @@ public class FirstComeFirstServed extends Escalonador {
             filaDeExecucao.add(filaDeEspera.poll());
     }
 
-    private Queue<Processo> processosOrdenados() {
-        LinkedList<Processo> resultado = new LinkedList<>(this.processos);
-        resultado.sort((p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
-    
-        return resultado;
-    }
-
     private static void printList(Queue<Processo> lista) {
         for(Processo p : lista) {
             System.out.print(p.getPid() + " | ");

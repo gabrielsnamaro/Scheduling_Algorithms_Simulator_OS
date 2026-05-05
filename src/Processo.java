@@ -143,6 +143,10 @@ public class Processo {
         return pid;
     }
 
+    public EPrioridade getPrioridade() {
+        return prioridade;
+    }
+
     public int getInstanteChegada() {
         return instanteDeChegada;
     }
