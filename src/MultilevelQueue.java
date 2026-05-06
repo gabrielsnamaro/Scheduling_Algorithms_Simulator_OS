@@ -143,7 +143,6 @@ public class MultilevelQueue extends Escalonador {
             execucao.setFilaBaixa(filaBaixa);
 
             adicionarDaEspera(instanteAtual);
-            adicionarDaEspera(instanteAtual);
 
             if(!filaAlta.isEmpty())
                 instanteAtual = executarFilaAlta(instanteAtual, execucao);
@@ -265,6 +264,9 @@ public class MultilevelQueue extends Escalonador {
     }
 
     private void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
+        while(!fila.isEmpty())
+            fila.poll();
+
         for(int i = 0; i < lista.size(); i++) {
             fila.add(lista.get(i));
         }

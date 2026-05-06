@@ -13,114 +13,321 @@
 ********** 5s até 10s **********
 * Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 3
 * Fila alta: 3, 7. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Quantum terminou!
 
 ********** 10s até 19s **********
 * Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 21
-* Fila alta: 7, 3, 11, 9, 3, 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 7, 3, 11, 9. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
 ********** 19s até 22s **********
 * Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
-* Fila alta: 3, 11, 9, 3, 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 3, 11, 9, 1, 5. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Processo terminou!
 
 ********** 22s até 45s **********
 * Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 20
-* Fila alta: 11, 9, 3, 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 11, 9, 1, 5. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
 ********** 45s até 49s **********
 * Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 10
-* Fila alta: 9, 3, 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 9, 1, 5. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 49s até 49s **********
-* Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
-* Fila alta: 3, 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Processo terminou!
+********** 49s até 54s **********
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 4
+* Fila alta: 1, 5, 7. 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Fez IO!
 
-********** 49s até 58s **********
+********** 54s até 56s **********
+* Processo executado: PID: 05 | Chegada: 0 | Burst Restante: 2
+* Fila alta: 5, 7. 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 56s até 65s **********
 * Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 12
-* Fila alta: 7, 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 7, 11, 9. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 58s até 59s **********
+********** 65s até 66s **********
 * Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 19
-* Fila alta: 11, 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 11, 9. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 59s até 66s **********
+********** 66s até 73s **********
 * Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 3
-* Fila alta: 9, 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 9, 1, 5. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 66s até 66s **********
-* Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
-* Fila alta: 3, 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+********** 73s até 77s **********
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 1, 5. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Processo terminou!
 
-********** 66s até 75s **********
+********** 77s até 79s **********
+* Processo executado: PID: 05 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 5, 7, 11. 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Processo terminou!
+
+********** 79s até 88s **********
 * Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 3
-* Fila alta: 7, 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 7, 11. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 75s até 78s **********
-* Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 0
-* Fila alta: 7, 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Processo terminou!
-
-********** 78s até 81s **********
+********** 88s até 91s **********
 * Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 16
-* Fila alta: 11, 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 11, 9. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Fez IO!
 
-********** 81s até 93s **********
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 4
-* Fila alta: 11, 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Fez IO!
-
-********** 93s até 96s **********
+********** 91s até 94s **********
 * Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 0
-* Fila alta: 9, 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 9. 
+* Fila baixa: 8, 2, 10, 6, 4. 
 * Processo terminou!
 
-********** 96s até 96s **********
-* Processo executado: PID: 09 | Chegada: 7 | Burst Restante: 0
-* Fila alta: 9, 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Processo terminou!
-
-********** 96s até 96s **********
-* Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
-* Fila alta: 3, 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Processo terminou!
-
-********** 96s até 96s **********
-* Processo executado: PID: 03 | Chegada: 1 | Burst Restante: 0
-* Fila alta: 3, 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
-* Processo terminou!
-
-********** 96s até 96s **********
+********** 94s até 97s **********
 * Processo executado: PID: 07 | Chegada: 5 | Burst Restante: 0
-* Fila alta: 7, 7, 7, 11, 11, 11, 11, 9, 9, 9, 9, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 11, 11, 9, 11, 11, 11, 11, 9, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 7, 7, 7, 7, 11, 7, 7, 7, 7, 11, 7, 7, 7, 7, 7, 7, 7, 7, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9. 
-* Fila baixa: 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 8, 2, 10, 6, 4, 4. 
+* Fila alta: 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Processo terminou!
+
+********** 97s até 109s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 109s até 110s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 8, 2, 10, 6, 4. 
+* Fez IO!
+
+********** 110s até 115s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 15
+* Fila alta: 
+* Fila baixa: 2, 10, 6, 4. 
+* Fez IO!
+
+********** 115s até 118s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 10, 6, 4. 
+* Fez IO!
+
+********** 118s até 121s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 19
+* Fila alta: 
+* Fila baixa: 10, 6, 4, 8. 
+* Fez IO!
+
+********** 121s até 127s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 6, 4, 8. 
+* Fez IO!
+
+********** 127s até 128s **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 4, 8, 2. 
+* Processo terminou!
+
+********** 128s até 135s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 18
+* Fila alta: 
+* Fila baixa: 4, 8, 2, 10. 
+* Fez IO!
+
+********** 135s até 139s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 8, 2, 10. 
+* Fez IO!
+
+********** 139s até 144s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 2, 10, 6. 
+* Fez IO!
+
+********** 144s até 149s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 14
+* Fila alta: 
+* Fila baixa: 10, 6. 
+* Fez IO!
+
+********** 149s até 155s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 6, 4, 8. 
+* Fez IO!
+
+********** 155s até 162s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 4, 8, 2. 
+* Fez IO!
+
+********** 162s até 166s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 8, 2, 10. 
+* Fez IO!
+
+********** 166s até 171s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 2, 10, 6. 
+* Fez IO!
+
+********** 171s até 176s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 10, 6. 
+* Fez IO!
+
+********** 176s até 177s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 6, 4, 8. 
+
+
+********** 177s até 178s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 6, 4, 8, 2. 
+
+
+********** 178s até 179s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 6, 4, 8, 2. 
+
+
+********** 179s até 180s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 6, 4, 8, 2. 
+
+
+********** 180s até 181s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 6, 4, 8, 2. 
+
+
+********** 181s até 182s **********
+* Processo executado: PID: 06 | Chegada: 3 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 6, 4, 8, 2. 
+* Processo terminou!
+
+********** 182s até 189s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 4, 8, 2, 10. 
+* Fez IO!
+
+********** 189s até 190s **********
+* Processo executado: PID: 08 | Chegada: 1 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 8, 2, 10. 
+* Processo terminou!
+
+********** 190s até 191s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 2, 10. 
+
+
+********** 191s até 192s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 2, 10. 
+
+
+********** 192s até 193s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 2, 10. 
+
+
+********** 193s até 194s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 2, 10. 
+
+
+********** 194s até 195s **********
+* Processo executado: PID: 02 | Chegada: 2 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 2, 10. 
+* Processo terminou!
+
+********** 195s até 201s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 10, 4. 
+* Fez IO!
+
+********** 201s até 202s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 4. 
+
+
+********** 202s até 203s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 4. 
+
+
+********** 203s até 204s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 4. 
+
+
+********** 204s até 205s **********
+* Processo executado: PID: 04 | Chegada: 4 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 4. 
+* Processo terminou!
+
+********** 205s até 206s **********
+* CPU ociosa...
+
+********** 206s até 207s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 
+
+
+********** 207s até 208s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 10. 
+
+
+********** 208s até 209s **********
+* Processo executado: PID: 10 | Chegada: 2 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 10. 
 * Processo terminou!
 
