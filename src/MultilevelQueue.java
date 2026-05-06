@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -109,7 +110,6 @@ public class MultilevelQueue extends Escalonador {
         }
     }
 
-
     Scanner teclado;
     Queue<Processo> filaAlta;
     Queue<Processo> filaBaixa;
@@ -123,7 +123,9 @@ public class MultilevelQueue extends Escalonador {
 
     @Override
     public void escalonar() {
-        Queue<Processo> todos = processosOrdenados();
+        LinkedList<Processo> listaTodos = new LinkedList<>(processos);
+        ordenar(listaTodos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
+        Queue<Processo> todos = listaTodos;
         filaAlta = new LinkedList<>();
         filaBaixa = new LinkedList<>();
         espera = new LinkedList<>();
@@ -135,21 +137,24 @@ public class MultilevelQueue extends Escalonador {
 
             Execucao execucao = new Execucao();
 
-            adicionarProcessosChegando(todos, filaAlta, EPrioridade.ALTA, instanteAtual);
-            adicionarProcessosChegando(todos, filaBaixa, EPrioridade.BAIXA, instanteAtual);
+            adicionarProcessosChegando(todos, instanteAtual);
 
             execucao.setFilaAlta(filaAlta);
             execucao.setFilaBaixa(filaBaixa);
 
-            adicionarDaEspera(filaAlta, EPrioridade.ALTA, instanteAtual);
-            adicionarDaEspera(filaBaixa, EPrioridade.BAIXA, instanteAtual);
+            adicionarDaEspera(instanteAtual);
+            adicionarDaEspera(instanteAtual);
 
             if(!filaAlta.isEmpty())
                 instanteAtual = executarFilaAlta(instanteAtual, execucao);
             else if(!filaBaixa.isEmpty())
                 instanteAtual = executarFilaBaixa(instanteAtual, execucao);
-            else
+            else {
+                execucao.setInstanteInicial(instanteAtual);
                 execucao.reportarOcio();
+                instanteAtual++;
+                execucao.setInstanteFinal(instanteAtual);
+            }
 
             esperar();
             execucao.imprimir();
@@ -187,7 +192,7 @@ public class MultilevelQueue extends Escalonador {
     }
 
     private int executarFilaBaixa(int instante, Execucao execucao) {
-        Processo atual = filaBaixa.poll();
+        Processo atual = filaBaixa.element();
         int novoInstante;
 
         execucao.setProcesso(atual);
@@ -198,11 +203,12 @@ public class MultilevelQueue extends Escalonador {
             novoInstante = instante + 1;
         } catch(InterrupcaoIO e) {
             novoInstante = e.getNovoInstante();
-            espera.add(atual);
+            espera.add(filaBaixa.poll());
             execucao.reportarIO();
         } catch(InterrupcaoEncerramento e) {
             novoInstante = e.getNovoInstante();
             execucao.reportarFinalizado();
+            filaBaixa.poll();
         } 
 
         execucao.setInstanteFinal(novoInstante);
@@ -210,34 +216,73 @@ public class MultilevelQueue extends Escalonador {
         return novoInstante;
     }
 
-    private void adicionarDaEspera(Queue<Processo> fila, EPrioridade prioridade, int instante) {
-        LinkedList<Processo> naPrioridade = porPrioridade(prioridade, espera);
+    private void adicionarDaEspera(int instante) {
+        Queue<Processo>[] filas = extrairParaFilas(espera);
+        Queue<Processo> naPrioridadeAlta = filas[0];
+        Queue<Processo> naPrioridadeBaixa = filas[1];
 
-        while(!espera.isEmpty() 
-            && espera.element().proximoRetornoDeIO() != -1
-            && espera.element().proximoRetornoDeIO() <= instante)
-        fila.add(espera.poll());
+        while(!naPrioridadeAlta.isEmpty() 
+            && naPrioridadeAlta.element().proximoRetornoDeIO() != -1
+            && naPrioridadeAlta.element().proximoRetornoDeIO() <= instante)
+        filaAlta.add(naPrioridadeAlta.poll());
+
+        while(!naPrioridadeBaixa.isEmpty() 
+            && naPrioridadeBaixa.element().proximoRetornoDeIO() != -1
+            && naPrioridadeBaixa.element().proximoRetornoDeIO() <= instante)
+        filaBaixa.add(naPrioridadeBaixa.poll());
+
+        restaurar(espera, filas);
+        LinkedList<Processo> lista = new LinkedList<>(espera);
+        ordenar(lista, (p1, p2) -> Integer.compare(p1.proximoRetornoDeIO(), p2.proximoRetornoDeIO()));
+        transferirListaParaFila(espera, lista);
     }
 
-    private void adicionarProcessosChegando(Queue<Processo> todos, Queue<Processo> fila, EPrioridade prioridade, int instante) {
-        LinkedList<Processo> naPrioridade = porPrioridade(prioridade, todos);
+    private void adicionarProcessosChegando(Queue<Processo> todos, int instante) {
+        Queue<Processo>[] filas = extrairParaFilas(todos);
+        Queue<Processo> naPrioridadeAlta = filas[0];
+        Queue<Processo> naPrioridadeBaixa = filas[1];
 
-        while(!todos.isEmpty() && todos.element().getInstanteChegada() >= instante) {
-            fila.add(todos.poll());
+        while(!naPrioridadeAlta.isEmpty() && naPrioridadeAlta.element().getInstanteChegada() <= instante) {
+            filaAlta.add(naPrioridadeAlta.poll());
+        }
+
+        while(!naPrioridadeBaixa.isEmpty() && naPrioridadeBaixa.element().getInstanteChegada() <= instante) {
+            filaBaixa.add(naPrioridadeBaixa.poll());
+        }
+
+        restaurar(todos, filas);
+        LinkedList<Processo> lista = new LinkedList<>(todos);
+        ordenar(lista, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
+        transferirListaParaFila(todos, lista);
+    }
+
+    private void restaurar(Queue<Processo> todos, Queue<Processo>[] filas) {
+        while(!filas[0].isEmpty())
+            todos.add(filas[0].poll());
+
+        while(!filas[1].isEmpty())
+            todos.add(filas[1].poll());
+    }
+
+    private void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
+        for(int i = 0; i < lista.size(); i++) {
+            fila.add(lista.get(i));
         }
     }
 
-    private LinkedList<Processo> porPrioridade(EPrioridade prioridade, Queue<Processo> processos) {
-        LinkedList<Processo> resultado = new LinkedList<>();
+    private Queue<Processo>[] extrairParaFilas(Queue<Processo> processos) {
+        Queue<Processo>[] filas = (Queue<Processo>[]) new Queue[2];
+        filas[0] = new LinkedList<>();
+        filas[1] = new LinkedList<>();
 
-       
-
-        for(Processo processo : processos) {
-            if(processo.getPrioridade().equals(prioridade))
-                resultado.add(processo);
+        while(!processos.isEmpty()) {
+            if(processos.element().getPrioridade().equals(EPrioridade.ALTA))
+                filas[0].add(processos.poll());
+            else if(processos.element().getPrioridade().equals(EPrioridade.BAIXA))
+                filas[1].add(processos.poll());
         }
 
-        return resultado;
+        return filas;
     }
 
     private void esperar() {

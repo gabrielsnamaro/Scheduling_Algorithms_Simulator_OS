@@ -89,7 +89,10 @@ public class FirstComeFirstServed extends Escalonador {
 
     @Override
     public void escalonar() {
-        Queue<Processo> proximosProcessos = processosOrdenados();
+        LinkedList<Processo> listaProximos = new LinkedList<>(processos);
+        ordenar(listaProximos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
+        Queue<Processo> proximosProcessos = listaProximos;
+
         Queue<Processo> processosProntos = new LinkedList<>();
         Queue<Processo> processosEmEspera = new LinkedList<>();
 

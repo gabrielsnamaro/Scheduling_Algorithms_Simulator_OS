@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,11 +18,8 @@ public abstract class Escalonador {
         retorno = new HashMap<>(processos.size());
     }
 
-    protected Queue<Processo> processosOrdenados() {
-        LinkedList<Processo> resultado = new LinkedList<>(this.processos);
-        resultado.sort((p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
-    
-        return resultado;
+    protected void ordenar(LinkedList<Processo> processos, Comparator<Processo> comparador) {
+        processos.sort(comparador);
     }
 
     public abstract void escalonar();
