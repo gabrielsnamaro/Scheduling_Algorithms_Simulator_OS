@@ -118,7 +118,6 @@ public class MultilevelQueue extends Escalonador {
 
     public MultilevelQueue(LinkedList<Processo> processos) {
         super(processos);
-        teclado = new Scanner(System.in);
     }
 
     @Override
@@ -133,8 +132,6 @@ public class MultilevelQueue extends Escalonador {
         int instanteAtual = 0;
 
         while((todos.size() + espera.size() + filaAlta.size() + filaBaixa.size()) > 0) {
-            System.out.println(String.format("%d - %d - %d - %d", todos.size(), espera.size(), filaAlta.size(), filaBaixa.size()));
-
             Execucao execucao = new Execucao();
 
             adicionarProcessosChegando(todos, instanteAtual);
@@ -155,12 +152,9 @@ public class MultilevelQueue extends Escalonador {
                 execucao.setInstanteFinal(instanteAtual);
             }
 
-            esperar();
             execucao.imprimir();
             Escritor.registrar(execucao.registro());
         }
-
-        teclado.close();
 
     }
 
@@ -285,9 +279,5 @@ public class MultilevelQueue extends Escalonador {
         }
 
         return filas;
-    }
-
-    private void esperar() {
-        teclado.nextLine();
     }
 }
