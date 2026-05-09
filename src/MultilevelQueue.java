@@ -4,10 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class MultilevelQueue extends Escalonador {
-    private class Execucao {
-        private int instanteInicial;
-        private int instanteFinal;
-        private Processo processo;
+    private class ExecucaoMLQ extends Execucao {
         private String filaAlta;
         private String filaBaixa;
         private Boolean houveIO;
@@ -15,23 +12,9 @@ public class MultilevelQueue extends Escalonador {
         private Boolean cpuOciosa;
         private Boolean quantumTerminou;
 
-        public Execucao() {
-            houveIO = false;
-            terminou = false;
-            cpuOciosa = false;
+        public ExecucaoMLQ() {
+            super();
             quantumTerminou = false;
-        }
-
-        public void setInstanteInicial(int instanteInicial) {
-            this.instanteInicial = instanteInicial;
-        }
-
-        public void setInstanteFinal(int instanteFinal) {
-            this.instanteFinal = instanteFinal;
-        }
-
-        public void setProcesso(Processo processo) {
-            this.processo = processo;
         }
 
         public void setFilaAlta(Queue<Processo> fila) {
@@ -66,24 +49,8 @@ public class MultilevelQueue extends Escalonador {
             this.filaBaixa = builder.toString();
         }
 
-        public void reportarIO() {
-            houveIO = true;
-        }
-
-        public void reportarFinalizado() {
-            terminou = true;
-        }
-
-        public void reportarOcio() {
-            cpuOciosa = true;
-        }
-
         public void reportarQuantum() {
             quantumTerminou = true;
-        }
-
-        public void imprimir() {
-            System.out.println(registro());
         }
 
         public String registro() {
@@ -132,7 +99,7 @@ public class MultilevelQueue extends Escalonador {
         int instanteAtual = 0;
 
         while((todos.size() + espera.size() + filaAlta.size() + filaBaixa.size()) > 0) {
-            Execucao execucao = new Execucao();
+            ExecucaoMLQ execucao = new ExecucaoMLQ();
 
             adicionarProcessosChegando(todos, instanteAtual);
 
@@ -158,7 +125,7 @@ public class MultilevelQueue extends Escalonador {
 
     }
 
-    private int executarFilaAlta(int instante, Execucao execucao) {
+    private int executarFilaAlta(int instante, ExecucaoMLQ execucao) {
         Processo atual = filaAlta.poll();
         int novoInstante;
 
@@ -184,7 +151,7 @@ public class MultilevelQueue extends Escalonador {
         return novoInstante;
     }
 
-    private int executarFilaBaixa(int instante, Execucao execucao) {
+    private int executarFilaBaixa(int instante, ExecucaoMLQ execucao) {
         Processo atual = filaBaixa.element();
         int novoInstante;
 
