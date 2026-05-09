@@ -78,7 +78,7 @@ public class Processo {
 
         int avancoReal = segundos;
 
-        if(proxIO != -1 && instanteAtual + segundos >= proxIO) {
+        if(proxIO != -1 && (burstTotal - burstRestante) + segundos >= proxIO) {
             avancoReal = proxIO - (burstTotal - burstRestante);
             quandoVoltaDeIO = instanteAtual + avancoReal + TEMPO_BLOQUEIO_IO;
             decrementarBurst(avancoReal, instanteAtual);
