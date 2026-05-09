@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Queue;
 
 public abstract class Escalonador {
-    protected class Execucao {
+    protected static class Execucao {
         protected int instanteInicial;
         protected int instanteFinal;
         protected Processo processo;
@@ -99,6 +99,12 @@ public abstract class Escalonador {
 
     protected void ordenar(LinkedList<Processo> processos, Comparator<Processo> comparador) {
         processos.sort(comparador);
+    }
+
+    protected LinkedList<Processo> organizarProximosProcessos() {
+        LinkedList<Processo> listaProximos = new LinkedList<>(processos);
+        ordenar(listaProximos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
+        return listaProximos;
     }
 
     public abstract void escalonar();

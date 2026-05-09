@@ -13,6 +13,7 @@ public class App {
             opcao = menu(teclado);
             executar(opcao, lista);
             esperar(teclado);
+            limparTela();
         } while(opcao != 0);
     }
 
