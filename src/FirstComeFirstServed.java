@@ -19,9 +19,17 @@ public class FirstComeFirstServed extends Escalonador {
 
         while((proximosProcessos.size() + processosEmEspera.size() + processosProntos.size()) > 0) {
             RegistroExecucao execucaoAtual = new RegistroExecucao();
+            execucaoAtual.setFilaDePronto(processosProntos);
+            execucaoAtual.setInstanteInicial(instanteAtual);
             
             if(!processosProntos.isEmpty()) {
                 Processo atual = processosProntos.poll();
+    
+                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual);
+                metrica.iniciar(instanteAtual);
+
+                execucaoAtual.setProcesso(atual);
+
                 int tempoAvanco = atual.getBurstRestante();
 
                 try {
@@ -29,8 +37,14 @@ public class FirstComeFirstServed extends Escalonador {
                 } catch (InterrupcaoIO e) {
                     instanteAtual = e.getNovoInstante();
                     processosEmEspera.add(atual);
+
+                    metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
+                    execucaoAtual.reportarIO();
                 } catch (InterrupcaoEncerramento e) {
                     instanteAtual = e.getNovoInstante();
+
+                    metrica.setInstanteDeTermino(instanteAtual);
+                    execucaoAtual.reportarFinalizado();
                 }
             } else {
                 instanteAtual += Math.min(
@@ -41,7 +55,12 @@ public class FirstComeFirstServed extends Escalonador {
                         ? Integer.MAX_VALUE
                         : proximosProcessos.element().getInstanteChegada()
                 ) - instanteAtual;
+
+                execucaoAtual.reportarOcio();
             }
+
+            execucaoAtual.setInstanteFinal(instanteAtual);
+            Escritor.registrar(execucaoAtual.registro());
 
             adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
             adicionarProcessosDaEspera(processosEmEspera, processosProntos, instanteAtual);

@@ -3,14 +3,19 @@ public class MetricaIndividual {
     private int instanteDeInicio;
     private int instanteDeTermino;
     private int tempoEmIO;
+    private boolean iniciou;
 
     public MetricaIndividual(Processo processo) {
         this.processo = processo;
         tempoEmIO = 0;
+        iniciou = false;
     }
 
-    public void setInstanteDeInicio(int instanteDeInicio) {
-        this.instanteDeInicio = instanteDeInicio;
+    public void iniciar(int instanteDeInicio) {
+        if(!iniciou) {
+            this.instanteDeInicio = instanteDeInicio;
+            iniciou = true;
+        }
     }
 
     public void setInstanteDeTermino(int instanteDeTermino) {
@@ -32,14 +37,22 @@ public class MetricaIndividual {
         return instanteDeTermino;
     }
 
+    public int getPid() {
+        return processo.getPid();
+    }
+
+    public int getInicio() {
+        return instanteDeInicio;
+    }
+
     @Override
     public String toString() {
         if(instanteDeTermino == 0)
             throw new UnsupportedOperationException("Processo não foi finalizado. Métricas não foram completamente colhidas. ");
 
         return String.format(
-            "* PID: %d\n* Iniciou em: %dms\n* Terminou em %dms\n* Tempo total realizando I/O: %dms\n* Tempo de espera: %dms\n",
-            processo.getPid(), instanteDeInicio, instanteDeTermino, tempoEmIO, calcularEspera()
+            "* PID: %d\n\t-> Chegou em: %dms\n\t-> Iniciou em: %dms\n\t-> Terminou em %dms\n\t-> Tempo total realizando I/O: %dms\n\t-> Tempo de espera: %dms\n",
+            processo.getPid(), processo.getInstanteChegada(), instanteDeInicio, instanteDeTermino, tempoEmIO, calcularEspera()
         );
     }
 }

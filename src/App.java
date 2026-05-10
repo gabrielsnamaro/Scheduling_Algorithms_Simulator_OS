@@ -59,7 +59,11 @@ public class App {
                 throw new IllegalArgumentException("Opção inválida!");
         }
 
-        if(escalonador != null) escalonador.escalonar();
+        if(escalonador != null) {
+            escalonador.escalonar();
+            
+            System.out.println(escalonador.metricas());
+        }
     }
 
     private static void printList(List<Processo> lista) {

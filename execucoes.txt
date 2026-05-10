@@ -1,816 +1,250 @@
 ********** 0ms até 3ms **********
 * Fila de pronto: 1, 2, 6, 14. 
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 7
-* Surto (quantum) previsto: 10ms
 * Fez IO!
 
 ********** 3ms até 8ms **********
 * Fila de pronto: 2, 6, 14, 4, 10, 3, 8, 5, 12. 
 * Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 0
-* Surto (quantum) previsto: 7ms
 * Processo terminou!
 
 ********** 8ms até 13ms **********
 * Fila de pronto: 6, 14, 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
 * Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 9
-* Surto (quantum) previsto: 6ms
 * Fez IO!
 
 ********** 13ms até 15ms **********
 * Fila de pronto: 14, 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
 * Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 7
-* Surto (quantum) previsto: 6ms
 * Fez IO!
 
 ********** 15ms até 17ms **********
 * Fila de pronto: 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
 * Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 5
-* Surto (quantum) previsto: 4ms
 * Fez IO!
 
-********** 17ms até 20ms **********
+********** 17ms até 24ms **********
 * Fila de pronto: 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 27
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 20ms até 23ms **********
-* Fila de pronto: 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 15
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 23ms até 26ms **********
-* Fila de pronto: 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 3, 4. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 17
-* Surto (quantum) previsto: 3ms
-* Fez IO!
-
-********** 26ms até 29ms **********
-* Fila de pronto: 5, 12, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 3, 4. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 22
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 29ms até 32ms **********
-* Fila de pronto: 12, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 3, 4, 5. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 12
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 32ms até 35ms **********
-* Fila de pronto: 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 3, 4, 5, 12, 8. 
-* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 5
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 35ms até 38ms **********
-* Fila de pronto: 16, 9, 11, 13, 15, 1, 10, 6, 14, 3, 4, 5, 12, 8, 7. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 25
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 38ms até 41ms **********
-* Fila de pronto: 9, 11, 13, 15, 1, 10, 6, 14, 3, 4, 5, 12, 8, 7, 16. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 9
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 41ms até 44ms **********
-* Fila de pronto: 11, 13, 15, 1, 10, 6, 14, 3, 4, 5, 12, 8, 7, 16, 9. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 19
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 44ms até 47ms **********
-* Fila de pronto: 13, 15, 1, 10, 6, 14, 3, 4, 5, 12, 8, 7, 16, 9, 11. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 32
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 47ms até 50ms **********
-* Fila de pronto: 15, 1, 10, 6, 14, 3, 4, 5, 12, 8, 7, 16, 9, 11, 13. 
-* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 7
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 50ms até 53ms **********
-* Fila de pronto: 1, 10, 6, 14, 3, 4, 5, 12, 8, 7, 16, 9, 11, 13, 15. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 4
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 53ms até 56ms **********
-* Fila de pronto: 10, 6, 14, 3, 4, 5, 12, 8, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 24
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 56ms até 59ms **********
-* Fila de pronto: 6, 14, 3, 4, 5, 12, 8, 7, 16, 9, 11, 13, 15, 1, 10. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 6
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 59ms até 62ms **********
-* Fila de pronto: 14, 3, 4, 5, 12, 8, 7, 16, 9, 11, 13, 15, 1, 10, 6. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 4
-* Surto (quantum) previsto: 3ms
-* Quantum terminou!
-
-********** 62ms até 63ms **********
-* Fila de pronto: 3, 4, 5, 12, 8, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 14
-* Surto (quantum) previsto: 3ms
-* Fez IO!
-
-********** 63ms até 65ms **********
-* Fila de pronto: 4, 5, 12, 8, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14. 
-* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 65ms até 67ms **********
-* Fila de pronto: 5, 12, 8, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 4. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 20
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 67ms até 68ms **********
-* Fila de pronto: 12, 8, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 4, 5. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 11
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 68ms até 70ms **********
-* Fila de pronto: 8, 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 4, 5, 3. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 15
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 70ms até 72ms **********
-* Fila de pronto: 7, 16, 9, 11, 13, 15, 1, 10, 6, 14, 4, 5, 3, 8. 
-* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 72ms até 74ms **********
-* Fila de pronto: 16, 9, 11, 13, 15, 1, 10, 6, 14, 4, 5, 3, 8, 7. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 23
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 74ms até 75ms **********
-* Fila de pronto: 9, 11, 13, 15, 1, 10, 6, 14, 4, 5, 3, 8, 7, 16, 12. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 8
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 75ms até 77ms **********
-* Fila de pronto: 11, 13, 15, 1, 10, 6, 14, 4, 5, 3, 8, 7, 16, 12. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 17
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 77ms até 79ms **********
-* Fila de pronto: 13, 15, 1, 10, 6, 14, 4, 5, 3, 8, 7, 16, 12. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 30
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 79ms até 81ms **********
-* Fila de pronto: 15, 1, 10, 6, 14, 4, 5, 3, 8, 7, 16, 12, 13. 
-* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 5
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 81ms até 82ms **********
-* Fila de pronto: 1, 10, 6, 14, 4, 5, 3, 8, 7, 16, 12, 13, 15, 9. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 82ms até 83ms **********
-* Fila de pronto: 10, 6, 14, 4, 5, 3, 8, 7, 16, 12, 13, 15, 9, 11. 
 * Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 23
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 83ms até 85ms **********
-* Fila de pronto: 6, 14, 4, 5, 3, 8, 7, 16, 12, 13, 15, 9, 11. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
+********** 24ms até 28ms **********
+* Fila de pronto: 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 14
 * Fez IO!
 
-********** 85ms até 86ms **********
-* Fila de pronto: 14, 4, 5, 3, 8, 7, 16, 12, 13, 15, 9, 11. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
+********** 28ms até 31ms **********
+* Fila de pronto: 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4. 
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 17
 * Fez IO!
 
-********** 86ms até 88ms **********
-* Fila de pronto: 4, 5, 3, 8, 7, 16, 12, 13, 15, 9, 11. 
-* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 88ms até 89ms **********
-* Fila de pronto: 5, 3, 8, 7, 16, 12, 13, 15, 9, 11, 4, 1, 10. 
+********** 31ms até 37ms **********
+* Fila de pronto: 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10. 
 * Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 19
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 89ms até 91ms **********
-* Fila de pronto: 3, 8, 7, 16, 12, 13, 15, 9, 11, 4, 1, 10. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 12
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 91ms até 93ms **********
-* Fila de pronto: 8, 7, 16, 12, 13, 15, 9, 11, 4, 1, 10, 3, 6, 14. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 13
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 93ms até 95ms **********
-* Fila de pronto: 7, 16, 12, 13, 15, 9, 11, 4, 1, 10, 3, 6, 14, 8. 
-* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 95ms até 96ms **********
-* Fila de pronto: 16, 12, 13, 15, 9, 11, 4, 1, 10, 3, 6, 14, 8, 7, 5. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 22
-* Surto (quantum) previsto: 2ms
+********** 37ms até 41ms **********
+* Fila de pronto: 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8. 
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 11
 * Fez IO!
 
-********** 96ms até 98ms **********
-* Fila de pronto: 12, 13, 15, 9, 11, 4, 1, 10, 3, 6, 14, 8, 7, 5. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 98ms até 100ms **********
-* Fila de pronto: 13, 15, 9, 11, 4, 1, 10, 3, 6, 14, 8, 7, 5, 12. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 28
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 100ms até 102ms **********
-* Fila de pronto: 15, 9, 11, 4, 1, 10, 3, 6, 14, 8, 7, 5, 12, 13. 
-* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 102ms até 104ms **********
-* Fila de pronto: 9, 11, 4, 1, 10, 3, 6, 14, 8, 7, 5, 12, 13, 15, 16. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 6
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 104ms até 106ms **********
-* Fila de pronto: 11, 4, 1, 10, 3, 6, 14, 8, 7, 5, 12, 13, 15, 16, 9. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 15
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 106ms até 107ms **********
-* Fila de pronto: 4, 1, 10, 3, 6, 14, 8, 7, 5, 12, 13, 15, 16, 9, 11. 
-* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 107ms até 109ms **********
-* Fila de pronto: 1, 10, 3, 6, 14, 8, 7, 5, 12, 13, 15, 16, 9, 11. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 109ms até 111ms **********
-* Fila de pronto: 10, 3, 6, 14, 8, 7, 5, 12, 13, 15, 16, 9, 11, 1. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 21
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 111ms até 113ms **********
-* Fila de pronto: 3, 6, 14, 8, 7, 5, 12, 13, 15, 16, 9, 11, 1, 10. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 10
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 113ms até 115ms **********
-* Fila de pronto: 6, 14, 8, 7, 5, 12, 13, 15, 16, 9, 11, 1, 10, 3. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 115ms até 117ms **********
-* Fila de pronto: 14, 8, 7, 5, 12, 13, 15, 16, 9, 11, 1, 10, 3, 6. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 117ms até 118ms **********
-* Fila de pronto: 8, 7, 5, 12, 13, 15, 16, 9, 11, 1, 10, 3, 6, 14. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 12
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 118ms até 119ms **********
-* Fila de pronto: 7, 5, 12, 13, 15, 16, 9, 11, 1, 10, 3, 6, 14. 
+********** 41ms até 49ms **********
+* Fila de pronto: 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8. 
 * Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
 * Processo terminou!
 
-********** 119ms até 121ms **********
-* Fila de pronto: 5, 12, 13, 15, 16, 9, 11, 1, 10, 3, 6, 14. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 17
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 121ms até 123ms **********
-* Fila de pronto: 12, 13, 15, 16, 9, 11, 1, 10, 3, 6, 14, 5. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 7
-* Surto (quantum) previsto: 2ms
+********** 49ms até 55ms **********
+* Fila de pronto: 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 22
 * Fez IO!
 
-********** 123ms até 125ms **********
-* Fila de pronto: 13, 15, 16, 9, 11, 1, 10, 3, 6, 14, 5, 8. 
+********** 55ms até 59ms **********
+* Fila de pronto: 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 8
+* Fez IO!
+
+********** 59ms até 64ms **********
+* Fila de pronto: 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 17
+* Fez IO!
+
+********** 64ms até 73ms **********
+* Fila de pronto: 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9. 
 * Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 26
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 125ms até 127ms **********
-* Fila de pronto: 15, 16, 9, 11, 1, 10, 3, 6, 14, 5, 8. 
-* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 127ms até 129ms **********
-* Fila de pronto: 16, 9, 11, 1, 10, 3, 6, 14, 5, 8, 15. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 20
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 129ms até 131ms **********
-* Fila de pronto: 9, 11, 1, 10, 3, 6, 14, 5, 8, 15, 16, 12. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 131ms até 133ms **********
-* Fila de pronto: 11, 1, 10, 3, 6, 14, 5, 8, 15, 16, 12, 9, 13. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 13
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 133ms até 134ms **********
-* Fila de pronto: 1, 10, 3, 6, 14, 5, 8, 15, 16, 12, 9, 13, 11. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 134ms até 136ms **********
-* Fila de pronto: 10, 3, 6, 14, 5, 8, 15, 16, 12, 9, 13, 11. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 19
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 136ms até 137ms **********
-* Fila de pronto: 3, 6, 14, 5, 8, 15, 16, 12, 9, 13, 11, 10. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 137ms até 139ms **********
-* Fila de pronto: 6, 14, 5, 8, 15, 16, 12, 9, 13, 11, 10. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 139ms até 140ms **********
-* Fila de pronto: 14, 5, 8, 15, 16, 12, 9, 13, 11, 10. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 140ms até 142ms **********
-* Fila de pronto: 5, 8, 15, 16, 12, 9, 13, 11, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 15
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 142ms até 144ms **********
-* Fila de pronto: 8, 15, 16, 12, 9, 13, 11, 10, 5, 3. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 10
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 144ms até 145ms **********
-* Fila de pronto: 15, 16, 12, 9, 13, 11, 10, 5, 3, 8. 
+********** 73ms até 83ms **********
+* Fila de pronto: 15, 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11. 
 * Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
 * Processo terminou!
 
-********** 145ms até 147ms **********
-* Fila de pronto: 16, 12, 9, 13, 11, 10, 5, 3, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 18
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 147ms até 149ms **********
-* Fila de pronto: 12, 9, 13, 11, 10, 5, 3, 8, 16. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 5
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 149ms até 150ms **********
-* Fila de pronto: 9, 13, 11, 10, 5, 3, 8, 16, 12. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
+********** 83ms até 87ms **********
+* Fila de pronto: 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 3
 * Fez IO!
 
-********** 150ms até 152ms **********
-* Fila de pronto: 13, 11, 10, 5, 3, 8, 16, 12. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 24
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 152ms até 154ms **********
-* Fila de pronto: 11, 10, 5, 3, 8, 16, 12, 13. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 11
-* Surto (quantum) previsto: 2ms
+********** 87ms até 92ms **********
+* Fila de pronto: 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 4
 * Fez IO!
 
-********** 154ms até 156ms **********
-* Fila de pronto: 10, 5, 3, 8, 16, 12, 13. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 17
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 156ms até 158ms **********
-* Fila de pronto: 5, 3, 8, 16, 12, 13, 10, 9. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 13
-* Surto (quantum) previsto: 2ms
+********** 92ms até 96ms **********
+* Fila de pronto: 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13, 1. 
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 3
 * Fez IO!
 
-********** 158ms até 160ms **********
-* Fila de pronto: 3, 8, 16, 12, 13, 10, 9. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 7
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
+********** 96ms até 101ms **********
+* Fila de pronto: 4, 10, 3, 8, 5, 12, 16, 9, 11, 13, 1. 
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 0
+* Processo terminou!
 
-********** 160ms até 162ms **********
-* Fila de pronto: 8, 16, 12, 13, 10, 9, 3, 11. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 8
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 162ms até 164ms **********
-* Fila de pronto: 16, 12, 13, 10, 9, 3, 11, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 16
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 164ms até 166ms **********
-* Fila de pronto: 12, 13, 10, 9, 3, 11, 8, 16, 5. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 166ms até 168ms **********
-* Fila de pronto: 13, 10, 9, 3, 11, 8, 16, 5. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 22
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 168ms até 170ms **********
-* Fila de pronto: 10, 9, 3, 11, 8, 16, 5, 13. 
+********** 101ms até 109ms **********
+* Fila de pronto: 10, 3, 8, 5, 12, 16, 9, 11, 13, 1, 6, 14. 
 * Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 15
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 170ms até 172ms **********
-* Fila de pronto: 9, 3, 11, 8, 16, 5, 13. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 172ms até 174ms **********
-* Fila de pronto: 3, 11, 8, 16, 5, 13, 9, 12. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 5
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 174ms até 176ms **********
-* Fila de pronto: 11, 8, 16, 5, 13, 9, 12, 3. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 176ms até 177ms **********
-* Fila de pronto: 8, 16, 5, 13, 9, 12, 3, 11, 10. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 7
-* Surto (quantum) previsto: 2ms
+********** 109ms até 114ms **********
+* Fila de pronto: 3, 8, 5, 12, 16, 9, 11, 13, 1, 6, 14. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 9
 * Fez IO!
 
-********** 177ms até 179ms **********
-* Fila de pronto: 16, 5, 13, 9, 12, 3, 11, 10. 
+********** 114ms até 119ms **********
+* Fila de pronto: 8, 5, 12, 16, 9, 11, 13, 1, 6, 14, 10. 
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 12
+* Fez IO!
+
+********** 119ms até 125ms **********
+* Fila de pronto: 5, 12, 16, 9, 11, 13, 1, 6, 14, 10, 3. 
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 13
+* Fez IO!
+
+********** 125ms até 129ms **********
+* Fila de pronto: 12, 16, 9, 11, 13, 1, 6, 14, 10, 3, 8. 
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 7
+* Fez IO!
+
+********** 129ms até 137ms **********
+* Fila de pronto: 16, 9, 11, 13, 1, 6, 14, 10, 3, 8. 
 * Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 14
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 179ms até 181ms **********
-* Fila de pronto: 5, 13, 9, 12, 3, 11, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 11
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 181ms até 183ms **********
-* Fila de pronto: 13, 9, 12, 3, 11, 10, 5. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 20
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 183ms até 184ms **********
-* Fila de pronto: 9, 12, 3, 11, 10, 5, 13, 8. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 184ms até 186ms **********
-* Fila de pronto: 12, 3, 11, 10, 5, 13, 8, 16. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 186ms até 187ms **********
-* Fila de pronto: 3, 11, 10, 5, 13, 8, 16, 12. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
+********** 137ms até 142ms **********
+* Fila de pronto: 9, 11, 13, 1, 6, 14, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 3
 * Fez IO!
 
-********** 187ms até 189ms **********
-* Fila de pronto: 11, 10, 5, 13, 8, 16, 12. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 7
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 189ms até 191ms **********
-* Fila de pronto: 10, 5, 13, 8, 16, 12, 11. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 13
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 191ms até 193ms **********
-* Fila de pronto: 5, 13, 8, 16, 12, 11, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 193ms até 195ms **********
-* Fila de pronto: 13, 8, 16, 12, 11, 10, 5, 3. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 18
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 195ms até 197ms **********
-* Fila de pronto: 8, 16, 12, 11, 10, 5, 3, 13. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 5
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 197ms até 199ms **********
-* Fila de pronto: 16, 12, 11, 10, 5, 3, 13, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 12
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 199ms até 200ms **********
-* Fila de pronto: 12, 11, 10, 5, 3, 13, 8, 16. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 200ms até 202ms **********
-* Fila de pronto: 11, 10, 5, 3, 13, 8, 16. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 5
-* Surto (quantum) previsto: 2ms
+********** 142ms até 148ms **********
+* Fila de pronto: 11, 13, 1, 6, 14, 10, 3, 8, 5, 12, 16. 
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 11
 * Fez IO!
 
-********** 202ms até 204ms **********
-* Fila de pronto: 10, 5, 3, 13, 8, 16. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 11
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 204ms até 206ms **********
-* Fila de pronto: 5, 3, 13, 8, 16, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 7
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 206ms até 208ms **********
-* Fila de pronto: 3, 13, 8, 16, 10, 5. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 208ms até 209ms **********
-* Fila de pronto: 13, 8, 16, 10, 5, 3, 11. 
+********** 148ms até 157ms **********
+* Fila de pronto: 13, 1, 6, 14, 10, 3, 8, 5, 12, 16, 9. 
 * Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 17
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 209ms até 211ms **********
-* Fila de pronto: 8, 16, 10, 5, 3, 11. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 211ms até 213ms **********
-* Fila de pronto: 16, 10, 5, 3, 11, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 10
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 213ms até 215ms **********
-* Fila de pronto: 10, 5, 3, 11, 8, 16. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 215ms até 216ms **********
-* Fila de pronto: 5, 3, 11, 8, 16, 10, 13. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 6
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 216ms até 218ms **********
-* Fila de pronto: 3, 11, 8, 16, 10, 13. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
+********** 157ms até 160ms **********
+* Fila de pronto: 1, 6, 14, 10, 3, 8, 5, 12, 16, 9, 11. 
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
 * Processo terminou!
 
-********** 218ms até 220ms **********
-* Fila de pronto: 11, 8, 16, 10, 13. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 3
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
+********** 160ms até 164ms **********
+* Fila de pronto: 6, 14, 10, 3, 8, 5, 12, 16, 9, 11. 
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 0
+* Processo terminou!
 
-********** 220ms até 222ms **********
-* Fila de pronto: 8, 16, 10, 13, 11. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
+********** 164ms até 167ms **********
+* Fila de pronto: 14, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 0
+* Processo terminou!
 
-********** 222ms até 224ms **********
-* Fila de pronto: 16, 10, 13, 11, 8, 5. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 8
-* Surto (quantum) previsto: 2ms
-* Fez IO!
-
-********** 224ms até 225ms **********
-* Fila de pronto: 10, 13, 11, 8, 5. 
+********** 167ms até 174ms **********
+* Fila de pronto: 10, 3, 8, 5, 12, 16, 9, 11, 13. 
 * Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 8
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 225ms até 227ms **********
-* Fila de pronto: 13, 11, 8, 5. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 15
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 227ms até 229ms **********
-* Fila de pronto: 11, 8, 5, 13. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 1
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 229ms até 230ms **********
-* Fila de pronto: 8, 5, 13, 11, 16. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 230ms até 232ms **********
-* Fila de pronto: 5, 13, 11, 16, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 232ms até 234ms **********
-* Fila de pronto: 13, 11, 16, 10, 5. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 13
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 234ms até 235ms **********
-* Fila de pronto: 11, 16, 10, 5, 13. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 235ms até 237ms **********
-* Fila de pronto: 16, 10, 5, 13. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 6
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 237ms até 239ms **********
-* Fila de pronto: 10, 5, 13, 16. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 6
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 239ms até 241ms **********
-* Fila de pronto: 5, 13, 16, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 241ms até 243ms **********
-* Fila de pronto: 13, 16, 10, 5. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 11
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 243ms até 245ms **********
-* Fila de pronto: 16, 10, 5, 13. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
+********** 174ms até 179ms **********
+* Fila de pronto: 3, 8, 5, 12, 16, 9, 11, 13. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 4
 * Fez IO!
 
-********** 245ms até 247ms **********
-* Fila de pronto: 10, 5, 13. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
+********** 179ms até 184ms **********
+* Fila de pronto: 8, 5, 12, 16, 9, 11, 13, 10. 
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 7
+* Fez IO!
 
-********** 247ms até 249ms **********
-* Fila de pronto: 5, 13, 10. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
+********** 184ms até 191ms **********
+* Fila de pronto: 5, 12, 16, 9, 11, 13, 10, 3. 
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 6
+* Fez IO!
+
+********** 191ms até 195ms **********
+* Fila de pronto: 12, 16, 9, 11, 13, 10, 3, 8. 
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 3
+* Fez IO!
+
+********** 195ms até 201ms **********
+* Fila de pronto: 16, 9, 11, 13, 10, 3, 8. 
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 8
+* Fez IO!
+
+********** 201ms até 204ms **********
+* Fila de pronto: 9, 11, 13, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 0
 * Processo terminou!
 
-********** 249ms até 251ms **********
-* Fila de pronto: 13, 10. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 9
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
+********** 204ms até 210ms **********
+* Fila de pronto: 11, 13, 10, 3, 8, 5, 12. 
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 5
+* Fez IO!
 
-********** 251ms até 253ms **********
-* Fila de pronto: 10, 13, 16. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 253ms até 254ms **********
-* Fila de pronto: 13, 16, 10. 
+********** 210ms até 219ms **********
+* Fila de pronto: 13, 10, 3, 8, 5, 12, 16. 
 * Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 8
-* Surto (quantum) previsto: 2ms
 * Fez IO!
 
-********** 254ms até 256ms **********
-* Fila de pronto: 16, 10. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 256ms até 258ms **********
-* Fila de pronto: 10, 16. 
+********** 219ms até 227ms **********
+* Fila de pronto: 10, 3, 8, 5, 12, 16, 11. 
 * Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
 * Processo terminou!
 
-********** 258ms até 260ms **********
+********** 227ms até 231ms **********
+* Fila de pronto: 3, 8, 5, 12, 16, 11, 13. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 0
+* Processo terminou!
+
+********** 231ms até 238ms **********
+* Fila de pronto: 8, 5, 12, 16, 11, 13. 
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 0
+* Processo terminou!
+
+********** 238ms até 244ms **********
+* Fila de pronto: 5, 12, 16, 11, 13. 
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 0
+* Processo terminou!
+
+********** 244ms até 247ms **********
+* Fila de pronto: 12, 16, 11, 13. 
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 0
+* Processo terminou!
+
+********** 247ms até 251ms **********
+* Fila de pronto: 16, 11, 13. 
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 4
+* Fez IO!
+
+********** 251ms até 256ms **********
+* Fila de pronto: 11, 13. 
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 0
+* Processo terminou!
+
+********** 256ms até 264ms **********
+* Fila de pronto: 13, 16. 
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 0
+* Processo terminou!
+
+********** 264ms até 268ms **********
 * Fila de pronto: 16. 
 * Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
-* Processo terminou!
-
-********** 260ms até 262ms **********
-* Fila de pronto: 13. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 6
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 262ms até 264ms **********
-* Fila de pronto: 13. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 4
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 264ms até 266ms **********
-* Fila de pronto: 13. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 2
-* Surto (quantum) previsto: 2ms
-* Quantum terminou!
-
-********** 266ms até 268ms **********
-* Fila de pronto: 13. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 0
-* Surto (quantum) previsto: 2ms
 * Processo terminou!
 

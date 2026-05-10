@@ -1,10 +1,15 @@
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MetricaGeral {
-    private List<MetricaIndividual> processosRegistrados;
+    private Map<Integer, MetricaIndividual> processosRegistrados;
+
+    public MetricaGeral() {
+        processosRegistrados = new HashMap<>();
+    }
 
     public void adicionarIndividual(MetricaIndividual metrica) {
-        processosRegistrados.add(metrica);
+        processosRegistrados.put(metrica.getPid(), metrica);
     }
 
     /**
@@ -12,19 +17,58 @@ public class MetricaGeral {
      * @return Vazão: processos finalizados por milissegundo.
      */
     public double vazao() {
-        return processosRegistrados.size() / instanteFinal();
+        int[] instantes = inicioETermino();
+        int execucaoTotal = instantes[1] - instantes[0];
+
+        return processosRegistrados.size() / (double) execucaoTotal;
     }
 
-    private int instanteFinal() {
-        MetricaIndividual ultimo = processosRegistrados.get(0);
+    private int[] inicioETermino() {
+        int[] retorno = new int[2];
 
-        for(int i = 1; i < processosRegistrados.size(); i++) {
-            MetricaIndividual atual = processosRegistrados.get(i);
-
-            if(ultimo.getTermino() < atual.getTermino())
-                ultimo = atual;
+        if (processosRegistrados.isEmpty()) {
+            return new int[]{0, 0};
         }
 
-        return ultimo.getTermino();
+        Map.Entry<Integer, MetricaIndividual> primeiraEntrada = processosRegistrados.entrySet().iterator().next();
+        MetricaIndividual primeiroAComecar = primeiraEntrada.getValue();
+        MetricaIndividual ultimoATerminar = primeiraEntrada.getValue();
+
+        for (Map.Entry<Integer, MetricaIndividual> entrada : processosRegistrados.entrySet()) {
+            MetricaIndividual atual = entrada.getValue();
+            if (ultimoATerminar.getTermino() < atual.getTermino())
+                ultimoATerminar = atual;
+            if (primeiroAComecar.getInicio() > atual.getInicio())
+                primeiroAComecar = atual;
+        }
+
+        retorno[0] = primeiroAComecar.getInicio();
+        retorno[1] = ultimoATerminar.getTermino();
+        return retorno;
+    }
+
+    public MetricaIndividual gerarMetrica(Processo processo) {
+        MetricaIndividual retorno;
+        int pid = processo.getPid();
+
+        if(processosRegistrados.containsKey(pid)) {
+            retorno = processosRegistrados.get(pid);
+        } else {
+            retorno = new MetricaIndividual(processo);
+            processosRegistrados.put(pid, retorno);
+        }
+
+        return retorno;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("************ MÉTRICAS DE EXECUÇÃO ************\n* Vazão: " + vazao() + " processos por milissegundo\n*\n");
+
+        for(Map.Entry<Integer, MetricaIndividual> individual : processosRegistrados.entrySet()) {
+            builder.append(individual.getValue().toString());
+        }
+
+        return builder.toString();
     }
 }

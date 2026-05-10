@@ -87,10 +87,12 @@ public abstract class Escalonador {
     protected LinkedList<Processo> processos;
     protected int vazao;
     protected Queue<Processo> espera;    
+    protected MetricaGeral metricaGeral;
 
     public Escalonador(LinkedList<Processo> processos) {
         this.processos = processos;
         this.espera = new LinkedList<>();
+        metricaGeral = new MetricaGeral();
     }
 
     protected void ordenar(LinkedList<Processo> processos, Comparator<Processo> comparador) {
@@ -122,6 +124,10 @@ public abstract class Escalonador {
         for(int i = 0; i < lista.size(); i++) {
             fila.add(lista.get(i));
         }
+    }
+
+    public MetricaGeral metricas() {
+        return metricaGeral;
     }
 
     public abstract void escalonar();
