@@ -52,7 +52,7 @@ public class MultilevelQueue extends Escalonador {
         }
 
         public String registro() {
-            String registro = "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
+            String registro = "********** " + instanteInicial + "ms até " + instanteFinal + "ms **********\n";
             
             if(!cpuOciosa) {
                 registro += "* Processo executado: " + processo.estadoAtual() + "\n* Fila alta: " + filaAlta + "\n* Fila baixa: " + filaBaixa + "\n";

@@ -64,7 +64,7 @@ public abstract class Escalonador {
         }
 
         public String registro() {
-            String registro = "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
+            String registro = "********** " + instanteInicial + "ms até " + instanteFinal + "ms **********\n";
             
             if(!cpuOciosa) {
                 registro += "* Fila de pronto: " + filaDePronto + "\n* Processo executado: " + processo.estadoAtual() + "\n";
