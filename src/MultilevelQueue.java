@@ -95,16 +95,23 @@ public class MultilevelQueue extends Escalonador {
             ExecucaoMLQ execucao = new ExecucaoMLQ();
 
             adicionarProcessosChegando(todos, instanteAtual);
-
             adicionarDaEspera(instanteAtual);
+
+            execucao.setFilaAlta(filaAlta);
+            execucao.setFilaBaixa(filaBaixa);
+            execucao.setInstanteInicial(instanteAtual);
 
             if(!filaAlta.isEmpty())
                 instanteAtual = executarFilaAlta(instanteAtual, execucao);
             else if(!filaBaixa.isEmpty())
                 instanteAtual = executarFilaBaixa(instanteAtual, execucao);
             else {
+                execucao.reportarOcio();
                 instanteAtual++;
             }
+
+            execucao.setInstanteFinal(instanteAtual);
+            Escritor.registrar(execucao.registro());
         }
 
     }
@@ -112,6 +119,9 @@ public class MultilevelQueue extends Escalonador {
     private int executarFilaAlta(int instante, ExecucaoMLQ execucao) {
         Processo atual = filaAlta.poll();
         int novoInstante;
+        
+        execucao.setProcesso(atual);
+        MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instante);
 
         try {
             atual.avancar(QUANTUM, instante);
@@ -120,8 +130,12 @@ public class MultilevelQueue extends Escalonador {
         } catch(InterrupcaoIO e) {
             novoInstante = e.getNovoInstante();
             espera.add(atual);
+            metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
+            execucao.reportarIO();
         } catch(InterrupcaoEncerramento e) {
             novoInstante = e.getNovoInstante();
+            metrica.setInstanteDeTermino(novoInstante);
+            execucao.reportarFinalizado();
         }
 
         return novoInstante;
@@ -131,15 +145,22 @@ public class MultilevelQueue extends Escalonador {
         Processo atual = filaBaixa.element();
         int novoInstante;
 
+        execucao.setProcesso(atual);
+        MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instante);
+
         try {
             atual.avancar(1, instante);
             novoInstante = instante + 1;
         } catch(InterrupcaoIO e) {
             novoInstante = e.getNovoInstante();
             espera.add(filaBaixa.poll());
+            metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
+            execucao.reportarIO();
         } catch(InterrupcaoEncerramento e) {
             novoInstante = e.getNovoInstante();
             filaBaixa.poll();
+            metrica.setInstanteDeTermino(novoInstante);
+            execucao.reportarFinalizado();
         }
 
         return novoInstante;

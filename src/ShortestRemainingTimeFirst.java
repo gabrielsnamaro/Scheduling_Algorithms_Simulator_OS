@@ -34,6 +34,9 @@ public class ShortestRemainingTimeFirst extends Escalonador {
 
             if(!prontos.isEmpty()) {
                 Processo atual = prontos.element();
+                
+                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instanteAtual);
+
                 execucao.setProcesso(atual);
 
                 try {
@@ -41,11 +44,15 @@ public class ShortestRemainingTimeFirst extends Escalonador {
                 } catch(InterrupcaoIO e) {
                     instanteAtual = e.getNovoInstante();
                     espera.add(prontos.poll());
+                    
                     execucao.reportarIO();
+                    metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
                 } catch(InterrupcaoEncerramento e) {
                     instanteAtual = e.getNovoInstante();
                     prontos.poll();
+
                     execucao.reportarFinalizado();
+                    metrica.setInstanteDeTermino(instanteAtual);
                 }
             } else {
                 execucao.reportarOcio();
@@ -53,7 +60,6 @@ public class ShortestRemainingTimeFirst extends Escalonador {
             }
 
             execucao.setInstanteFinal(instanteAtual);
-            execucao.imprimir();
             Escritor.registrar(execucao.registro());
         }
     }

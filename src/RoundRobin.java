@@ -72,25 +72,30 @@ public class RoundRobin extends Escalonador {
             adicionarEmChegada(prontos, proximos, instanteAtual);
             adicionarDaEspera(prontos, instanteAtual);
 
-            Processo atual = null;
-
             execucao.setInstanteInicial(instanteAtual);
             execucao.setFilaDePronto(prontos);
 
-            System.out.println();
             if(!prontos.isEmpty()) {
+                Processo atual = prontos.poll();
+
+                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instanteAtual);
+
                 try {
-                    atual = prontos.poll();
                     execucao.setProcesso(atual);
                     instanteAtual = atual.avancar(quantum, instanteAtual);
                     prontos.add(atual);
+
                     execucao.reportarQuantum();
                 } catch(InterrupcaoIO e) {
                     instanteAtual = e.getNovoInstante();
                     espera.add(atual);
+
+                    metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
                     execucao.reportarIO();
                 } catch(InterrupcaoEncerramento e) {
                     instanteAtual = e.getNovoInstante();
+                
+                    metrica.setInstanteDeTermino(instanteAtual);
                     execucao.reportarFinalizado();
                 }
             } else {
@@ -102,7 +107,6 @@ public class RoundRobin extends Escalonador {
 
             execucao.setInstanteFinal(instanteAtual);
 
-            execucao.imprimir();
             Escritor.registrar(execucao.registro());
         }
     }

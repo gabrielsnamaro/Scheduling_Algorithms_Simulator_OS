@@ -1,250 +1,999 @@
 ********** 0ms até 3ms **********
-* Fila de pronto: 1, 2, 6, 14. 
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 7
+* Fila alta: 1. 
+* Fila baixa: 2, 6, 14. 
 * Fez IO!
 
-********** 3ms até 8ms **********
-* Fila de pronto: 2, 6, 14, 4, 10, 3, 8, 5, 12. 
-* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 0
-* Processo terminou!
-
-********** 8ms até 13ms **********
-* Fila de pronto: 6, 14, 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 9
-* Fez IO!
-
-********** 13ms até 15ms **********
-* Fila de pronto: 14, 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 7
-* Fez IO!
-
-********** 15ms até 17ms **********
-* Fila de pronto: 4, 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 5
-* Fez IO!
-
-********** 17ms até 24ms **********
-* Fila de pronto: 10, 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 23
-* Fez IO!
-
-********** 24ms até 28ms **********
-* Fila de pronto: 3, 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4. 
+********** 3ms até 7ms **********
 * Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 14
+* Fila alta: 3, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12. 
 * Fez IO!
 
-********** 28ms até 31ms **********
-* Fila de pronto: 8, 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 17
+********** 7ms até 12ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 20
+* Fila alta: 5, 7, 9, 11, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 12ms até 17ms **********
+* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 3
+* Fila alta: 7, 9, 11, 13, 5, 15, 1, 3. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 17ms até 21ms **********
+* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 8
+* Fila alta: 9, 11, 13, 5, 15, 1, 3, 7. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 31ms até 37ms **********
-* Fila de pronto: 5, 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10. 
+********** 21ms até 26ms **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 17
+* Fila alta: 11, 13, 5, 15, 1, 3, 7. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 26ms até 31ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 30
+* Fila alta: 13, 5, 15, 1, 3, 7, 9. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 31ms até 32ms **********
 * Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 19
+* Fila alta: 5, 15, 1, 3, 7, 9, 13, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
+
+********** 32ms até 37ms **********
+* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 5
+* Fila alta: 15, 1, 3, 7, 9, 13, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
 
 ********** 37ms até 41ms **********
-* Fila de pronto: 12, 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 11
-* Fez IO!
-
-********** 41ms até 49ms **********
-* Fila de pronto: 7, 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8. 
-* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 0
-* Processo terminou!
-
-********** 49ms até 55ms **********
-* Fila de pronto: 16, 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 22
-* Fez IO!
-
-********** 55ms até 59ms **********
-* Fila de pronto: 9, 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
-* Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 8
-* Fez IO!
-
-********** 59ms até 64ms **********
-* Fila de pronto: 11, 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 17
-* Fez IO!
-
-********** 64ms até 73ms **********
-* Fila de pronto: 13, 15, 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 26
-* Fez IO!
-
-********** 73ms até 83ms **********
-* Fila de pronto: 15, 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11. 
-* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 0
-* Processo terminou!
-
-********** 83ms até 87ms **********
-* Fila de pronto: 1, 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 3
+* Fila alta: 1, 3, 7, 9, 13, 11, 15, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 87ms até 92ms **********
-* Fila de pronto: 6, 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 4
-* Fez IO!
-
-********** 92ms até 96ms **********
-* Fila de pronto: 14, 4, 10, 3, 8, 5, 12, 16, 9, 11, 13, 1. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 3
-* Fez IO!
-
-********** 96ms até 101ms **********
-* Fila de pronto: 4, 10, 3, 8, 5, 12, 16, 9, 11, 13, 1. 
-* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 0
-* Processo terminou!
-
-********** 101ms até 109ms **********
-* Fila de pronto: 10, 3, 8, 5, 12, 16, 9, 11, 13, 1, 6, 14. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 15
-* Fez IO!
-
-********** 109ms até 114ms **********
-* Fila de pronto: 3, 8, 5, 12, 16, 9, 11, 13, 1, 6, 14. 
+********** 41ms até 46ms **********
 * Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 9
+* Fila alta: 3, 7, 9, 13, 11, 15, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 114ms até 119ms **********
-* Fila de pronto: 8, 5, 12, 16, 9, 11, 13, 1, 6, 14, 10. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 12
-* Fez IO!
+********** 46ms até 49ms **********
+* Processo executado: PID: 07 | Chegada: 4 | Burst Restante: 0
+* Fila alta: 7, 9, 13, 11, 15, 5, 1. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Processo terminou!
 
-********** 119ms até 125ms **********
-* Fila de pronto: 5, 12, 16, 9, 11, 13, 1, 6, 14, 10, 3. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 13
-* Fez IO!
-
-********** 125ms até 129ms **********
-* Fila de pronto: 12, 16, 9, 11, 13, 1, 6, 14, 10, 3, 8. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 7
-* Fez IO!
-
-********** 129ms até 137ms **********
-* Fila de pronto: 16, 9, 11, 13, 1, 6, 14, 10, 3, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 14
-* Fez IO!
-
-********** 137ms até 142ms **********
-* Fila de pronto: 9, 11, 13, 1, 6, 14, 10, 3, 8, 5, 12. 
+********** 49ms até 54ms **********
 * Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 3
+* Fila alta: 9, 13, 11, 15, 5, 1. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 142ms até 148ms **********
-* Fila de pronto: 11, 13, 1, 6, 14, 10, 3, 8, 5, 12, 16. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 11
+********** 54ms até 58ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 26
+* Fila alta: 13, 11, 15, 5, 1, 3. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 148ms até 157ms **********
-* Fila de pronto: 13, 1, 6, 14, 10, 3, 8, 5, 12, 16, 9. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 17
-* Fez IO!
+********** 58ms até 63ms **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 12
+* Fila alta: 11, 15, 5, 1, 3. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 
-********** 157ms até 160ms **********
-* Fila de pronto: 1, 6, 14, 10, 3, 8, 5, 12, 16, 9, 11. 
+
+********** 63ms até 68ms **********
+* Processo executado: PID: 15 | Chegada: 8 | Burst Restante: 0
+* Fila alta: 15, 5, 1, 3, 11, 9, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Processo terminou!
+
+********** 68ms até 73ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 14
+* Fila alta: 5, 1, 3, 11, 9, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 73ms até 76ms **********
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 1, 3, 11, 9, 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Processo terminou!
 
-********** 160ms até 164ms **********
-* Fila de pronto: 6, 14, 10, 3, 8, 5, 12, 16, 9, 11. 
-* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 0
-* Processo terminou!
-
-********** 164ms até 167ms **********
-* Fila de pronto: 14, 10, 3, 8, 5, 12, 16, 9, 11, 13. 
-* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 0
-* Processo terminou!
-
-********** 167ms até 174ms **********
-* Fila de pronto: 10, 3, 8, 5, 12, 16, 9, 11, 13. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 8
-* Fez IO!
-
-********** 174ms até 179ms **********
-* Fila de pronto: 3, 8, 5, 12, 16, 9, 11, 13. 
+********** 76ms até 81ms **********
 * Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 4
+* Fila alta: 3, 11, 9, 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 179ms até 184ms **********
-* Fila de pronto: 8, 5, 12, 16, 9, 11, 13, 10. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 7
+********** 81ms até 82ms **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 11
+* Fila alta: 11, 9, 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 184ms até 191ms **********
-* Fila de pronto: 5, 12, 16, 9, 11, 13, 10, 3. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 6
-* Fez IO!
-
-********** 191ms até 195ms **********
-* Fila de pronto: 12, 16, 9, 11, 13, 10, 3, 8. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 3
-* Fez IO!
-
-********** 195ms até 201ms **********
-* Fila de pronto: 16, 9, 11, 13, 10, 3, 8. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 8
-* Fez IO!
-
-********** 201ms até 204ms **********
-* Fila de pronto: 9, 11, 13, 10, 3, 8, 5, 12. 
+********** 82ms até 85ms **********
 * Processo executado: PID: 09 | Chegada: 5 | Burst Restante: 0
+* Fila alta: 9, 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Processo terminou!
 
-********** 204ms até 210ms **********
-* Fila de pronto: 11, 13, 10, 3, 8, 5, 12. 
-* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 5
+********** 85ms até 90ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 21
+* Fila alta: 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 90ms até 91ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 13
+* Fila alta: 5, 13, 3, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 210ms até 219ms **********
-* Fila de pronto: 13, 10, 3, 8, 5, 12, 16. 
-* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 8
+********** 91ms até 95ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 17
+* Fila alta: 13, 3, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 219ms até 227ms **********
-* Fila de pronto: 10, 3, 8, 5, 12, 16, 11. 
-* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 0
-* Processo terminou!
-
-********** 227ms até 231ms **********
-* Fila de pronto: 3, 8, 5, 12, 16, 11, 13. 
+********** 95ms até 99ms **********
 * Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 0
+* Fila alta: 3, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Processo terminou!
 
-********** 231ms até 238ms **********
-* Fila de pronto: 8, 5, 12, 16, 11, 13. 
-* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 0
-* Processo terminou!
+********** 99ms até 104ms **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 6
+* Fila alta: 11, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 
-********** 238ms até 244ms **********
-* Fila de pronto: 5, 12, 16, 11, 13. 
-* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 0
-* Processo terminou!
 
-********** 244ms até 247ms **********
-* Fila de pronto: 12, 16, 11, 13. 
-* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 0
-* Processo terminou!
+********** 104ms até 109ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 8
+* Fila alta: 5, 11, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 
-********** 247ms até 251ms **********
-* Fila de pronto: 16, 11, 13. 
-* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 4
+
+********** 109ms até 110ms **********
+* Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 5
+* Fila alta: 11, 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Fez IO!
 
-********** 251ms até 256ms **********
-* Fila de pronto: 11, 13. 
+********** 110ms até 115ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 12
+* Fila alta: 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 115ms até 117ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 6
+* Fila alta: 5, 13, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 117ms até 121ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 8
+* Fila alta: 13, 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 121ms até 126ms **********
 * Processo executado: PID: 11 | Chegada: 6 | Burst Restante: 0
+* Fila alta: 11. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Processo terminou!
 
-********** 256ms até 264ms **********
-* Fila de pronto: 13, 16. 
+********** 126ms até 131ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 1
+* Fila alta: 5, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 131ms até 136ms **********
+* Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 3
+* Fila alta: 13, 5. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 136ms até 137ms **********
+* Processo executado: PID: 05 | Chegada: 3 | Burst Restante: 0
+* Fila alta: 5, 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Processo terminou!
+
+********** 137ms até 140ms **********
 * Processo executado: PID: 13 | Chegada: 7 | Burst Restante: 0
+* Fila alta: 13. 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
 * Processo terminou!
 
-********** 264ms até 268ms **********
-* Fila de pronto: 16. 
+********** 140ms até 141ms **********
+* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 141ms até 142ms **********
+* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 142ms até 143ms **********
+* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 143ms até 144ms **********
+* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 144ms até 145ms **********
+* Processo executado: PID: 02 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 2, 6, 14, 4, 10, 8, 12, 16. 
+* Processo terminou!
+
+********** 145ms até 146ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 13
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 146ms até 147ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 147ms até 148ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 148ms até 149ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12, 16. 
+
+
+********** 149ms até 150ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 150ms até 151ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+
+
+********** 151ms até 152ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 152ms até 153ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16. 
+
+
+********** 153ms até 154ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 154ms até 155ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 29
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 155ms até 156ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 28
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6. 
+
+
+********** 156ms até 157ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 27
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6. 
+
+
+********** 157ms até 158ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 26
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 158ms até 159ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 25
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 159ms até 160ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 24
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14, 4. 
+
+
+********** 160ms até 161ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 23
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14, 4. 
+* Fez IO!
+
+********** 161ms até 162ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 19
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14, 4. 
+
+
+********** 162ms até 163ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 18
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14, 4. 
+
+
+********** 163ms até 164ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 17
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14, 4. 
+* Fez IO!
+
+********** 164ms até 165ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 14
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 4. 
+
+
+********** 165ms até 166ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 13
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 4. 
+
+
+********** 166ms até 167ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 4, 10. 
+
+
+********** 167ms até 168ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 4, 10. 
+* Fez IO!
+
+********** 168ms até 169ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 27
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10. 
+
+
+********** 169ms até 170ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 26
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10, 8. 
+
+
+********** 170ms até 171ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 25
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10, 8. 
+
+
+********** 171ms até 172ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 24
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10, 8. 
+
+
+********** 172ms até 173ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 23
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10, 8. 
+
+
+********** 173ms até 174ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 22
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 4, 10, 8, 12. 
+* Fez IO!
+
+********** 174ms até 175ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12. 
+
+
+********** 175ms até 176ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12. 
+
+
+********** 176ms até 177ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12. 
+
+
+********** 177ms até 178ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12. 
+
+
+********** 178ms até 179ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 6, 14, 4, 10, 8, 12. 
+* Fez IO!
+
+********** 179ms até 180ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+
+
+********** 180ms até 181ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+
+
+********** 181ms até 182ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+
+
+********** 182ms até 183ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 14, 4, 10, 8, 12, 16. 
+* Fez IO!
+
+********** 183ms até 184ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16. 
+
+
+********** 184ms até 185ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16, 6. 
+
+
+********** 185ms até 186ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16, 6. 
+
+
+********** 186ms até 187ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16, 6. 
+
+
+********** 187ms até 188ms **********
+* Processo executado: PID: 04 | Chegada: 1 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 4, 10, 8, 12, 16, 6. 
+* Processo terminou!
+
+********** 188ms até 189ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 22
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 189ms até 190ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 21
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 190ms até 191ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 20
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 191ms até 192ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 19
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 192ms até 193ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 18
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 193ms até 194ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 17
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 194ms até 195ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 16
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+
+
+********** 195ms até 196ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 15
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16, 6, 14. 
+* Fez IO!
+
+********** 196ms até 197ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 16
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14. 
+
+
+********** 197ms até 198ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 15
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14. 
+
+
+********** 198ms até 199ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 14
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14. 
+
+
+********** 199ms até 200ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 13
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14. 
+
+
+********** 200ms até 201ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 8, 12, 16, 6, 14. 
+* Fez IO!
+
+********** 201ms até 202ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 10. 
+
+
+********** 202ms até 203ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 10. 
+
+
+********** 203ms até 204ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 10. 
+
+
+********** 204ms até 205ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 12, 16, 6, 14, 10. 
+* Fez IO!
+
+********** 205ms até 206ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 21
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10. 
+
+
+********** 206ms até 207ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 20
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8. 
+
+
+********** 207ms até 208ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 19
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8. 
+
+
+********** 208ms até 209ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 18
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8. 
+
+
+********** 209ms até 210ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 17
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8. 
+
+
+********** 210ms até 211ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 16
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8, 12. 
+
+
+********** 211ms até 212ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 15
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8, 12. 
+
+
+********** 212ms até 213ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 14
+* Fila alta: 
+* Fila baixa: 16, 6, 14, 10, 8, 12. 
+* Fez IO!
+
+********** 213ms até 214ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 6, 14, 10, 8, 12. 
+
+
+********** 214ms até 215ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 6, 14, 10, 8, 12. 
+
+
+********** 215ms até 216ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 6, 14, 10, 8, 12. 
+
+
+********** 216ms até 217ms **********
+* Processo executado: PID: 06 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 6, 14, 10, 8, 12. 
+* Processo terminou!
+
+********** 217ms até 218ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 14, 10, 8, 12. 
+
+
+********** 218ms até 219ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 14, 10, 8, 12, 16. 
+
+
+********** 219ms até 220ms **********
+* Processo executado: PID: 14 | Chegada: 0 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 14, 10, 8, 12, 16. 
+* Processo terminou!
+
+********** 220ms até 221ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 14
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 221ms até 222ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 13
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 222ms até 223ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 223ms até 224ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 224ms até 225ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 225ms até 226ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 226ms até 227ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+* Fez IO!
+
+********** 227ms até 228ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 228ms até 229ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 229ms até 230ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 230ms até 231ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 231ms até 232ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+* Fez IO!
+
+********** 232ms até 233ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 12, 16, 10. 
+
+
+********** 233ms até 234ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 12, 16, 10. 
+
+
+********** 234ms até 235ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 12, 16, 10. 
+
+
+********** 235ms até 236ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 12, 16, 10. 
+* Fez IO!
+
+********** 236ms até 237ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 13
+* Fila alta: 
+* Fila baixa: 16, 10. 
+
+
+********** 237ms até 238ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 12
+* Fila alta: 
+* Fila baixa: 16, 10, 8. 
+
+
+********** 238ms até 239ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 11
+* Fila alta: 
+* Fila baixa: 16, 10, 8. 
+
+
+********** 239ms até 240ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 10
+* Fila alta: 
+* Fila baixa: 16, 10, 8. 
+
+
+********** 240ms até 241ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 9
+* Fila alta: 
+* Fila baixa: 16, 10, 8. 
+
+
+********** 241ms até 242ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 8
+* Fila alta: 
+* Fila baixa: 16, 10, 8, 12. 
+* Fez IO!
+
+********** 242ms até 243ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 10, 8, 12. 
+
+
+********** 243ms até 244ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 10, 8, 12. 
+
+
+********** 244ms até 245ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 10, 8, 12. 
+
+
+********** 245ms até 246ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 10, 8, 12. 
+
+
+********** 246ms até 247ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 10, 8, 12. 
+
+
+********** 247ms até 248ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 248ms até 249ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+
+
+********** 249ms até 250ms **********
+* Processo executado: PID: 10 | Chegada: 1 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 10, 8, 12, 16. 
+* Processo terminou!
+
+********** 250ms até 251ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 251ms até 252ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 252ms até 253ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 253ms até 254ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 254ms até 255ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 255ms até 256ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+
+
+********** 256ms até 257ms **********
+* Processo executado: PID: 08 | Chegada: 2 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 8, 12, 16. 
+* Processo terminou!
+
+********** 257ms até 258ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 12, 16. 
+
+
+********** 258ms até 259ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 12, 16. 
+
+
+********** 259ms até 260ms **********
+* Processo executado: PID: 12 | Chegada: 3 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 12, 16. 
+* Processo terminou!
+
+********** 260ms até 261ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 7
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 261ms até 262ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 6
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 262ms até 263ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 5
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 263ms até 264ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 4
+* Fila alta: 
+* Fila baixa: 16. 
+* Fez IO!
+
+********** 264ms até 265ms **********
+* CPU ociosa...
+
+********** 265ms até 266ms **********
+* CPU ociosa...
+
+********** 266ms até 267ms **********
+* CPU ociosa...
+
+********** 267ms até 268ms **********
+* CPU ociosa...
+
+********** 268ms até 269ms **********
+* CPU ociosa...
+
+********** 269ms até 270ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 3
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 270ms até 271ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 2
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 271ms até 272ms **********
+* Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 1
+* Fila alta: 
+* Fila baixa: 16. 
+
+
+********** 272ms até 273ms **********
 * Processo executado: PID: 16 | Chegada: 4 | Burst Restante: 0
+* Fila alta: 
+* Fila baixa: 16. 
 * Processo terminou!
 

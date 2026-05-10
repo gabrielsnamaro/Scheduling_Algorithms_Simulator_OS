@@ -25,8 +25,7 @@ public class FirstComeFirstServed extends Escalonador {
             if(!processosProntos.isEmpty()) {
                 Processo atual = processosProntos.poll();
     
-                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual);
-                metrica.iniciar(instanteAtual);
+                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instanteAtual);
 
                 execucaoAtual.setProcesso(atual);
 

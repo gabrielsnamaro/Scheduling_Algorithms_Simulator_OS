@@ -36,6 +36,7 @@ public class App {
 
     private static void executar(int opcao, LinkedList<Processo> processos) throws IllegalArgumentException {
         Escalonador escalonador = null;
+        Escritor.limpar();
 
         switch (opcao) {
             case 1:
@@ -62,7 +63,7 @@ public class App {
         if(escalonador != null) {
             escalonador.escalonar();
             
-            System.out.println(escalonador.metricas());
+            System.out.println("\n\n" + escalonador.metricas());
         }
     }
 

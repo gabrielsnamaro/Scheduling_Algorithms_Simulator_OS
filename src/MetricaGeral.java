@@ -20,7 +20,7 @@ public class MetricaGeral {
         int[] instantes = inicioETermino();
         int execucaoTotal = instantes[1] - instantes[0];
 
-        return processosRegistrados.size() / (double) execucaoTotal;
+        return 1000 * (processosRegistrados.size() / (double) execucaoTotal);
     }
 
     private int[] inicioETermino() {
@@ -47,14 +47,14 @@ public class MetricaGeral {
         return retorno;
     }
 
-    public MetricaIndividual gerarMetrica(Processo processo) {
+    public MetricaIndividual gerarMetrica(Processo processo, int instante) {
         MetricaIndividual retorno;
         int pid = processo.getPid();
 
         if(processosRegistrados.containsKey(pid)) {
             retorno = processosRegistrados.get(pid);
         } else {
-            retorno = new MetricaIndividual(processo);
+            retorno = new MetricaIndividual(processo, instante);
             processosRegistrados.put(pid, retorno);
         }
 
@@ -63,7 +63,7 @@ public class MetricaGeral {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("************ MÉTRICAS DE EXECUÇÃO ************\n* Vazão: " + vazao() + " processos por milissegundo\n*\n");
+        StringBuilder builder = new StringBuilder(String.format("************ MÉTRICAS DE EXECUÇÃO ************\n* Vazão: aproximadamente %.2f processos por segundo\n*\n", vazao()));
 
         for(Map.Entry<Integer, MetricaIndividual> individual : processosRegistrados.entrySet()) {
             builder.append(individual.getValue().toString());
