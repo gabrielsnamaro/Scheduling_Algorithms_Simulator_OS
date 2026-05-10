@@ -1,12 +1,5 @@
-public class InterrupcaoEncerramento extends Exception {
-    private int novoInstante;
-
+public class InterrupcaoEncerramento extends Interrupcao {
     public InterrupcaoEncerramento(String message, int novoInstante) {
-        super(message);
-        this.novoInstante = novoInstante;
-    }
-
-    public int getNovoInstante() {
-        return novoInstante;
+        super(message, novoInstante);
     }
 }

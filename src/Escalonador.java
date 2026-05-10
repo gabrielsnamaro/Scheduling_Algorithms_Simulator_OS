@@ -1,8 +1,6 @@
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public abstract class Escalonador {
@@ -69,7 +67,7 @@ public abstract class Escalonador {
             String registro = "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
             
             if(!cpuOciosa) {
-                registro += "* Processo executado: " + processo.estadoAtual() + "\n* Fila de pronto: " + filaDePronto + "\n";
+                registro += "* Fila de pronto: " + filaDePronto + "\n* Processo executado: " + processo.estadoAtual() + "\n";
 
                 if(houveIO)
                     registro += "* Fez IO!";
@@ -87,14 +85,12 @@ public abstract class Escalonador {
     }
 
     protected LinkedList<Processo> processos;
-    protected Map<Integer, Processo> espera;
-    protected Map<Integer, Processo> retorno;
     protected int vazao;
+    protected Queue<Processo> espera;    
 
     public Escalonador(LinkedList<Processo> processos) {
         this.processos = processos;
-        espera = new HashMap<>(processos.size());
-        retorno = new HashMap<>(processos.size());
+        this.espera = new LinkedList<>();
     }
 
     protected void ordenar(LinkedList<Processo> processos, Comparator<Processo> comparador) {
@@ -105,6 +101,23 @@ public abstract class Escalonador {
         LinkedList<Processo> listaProximos = new LinkedList<>(processos);
         ordenar(listaProximos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
         return listaProximos;
+    }
+
+    protected LinkedList<Processo> organizarProximosProcessos(Comparator<Processo> comparador) {
+        LinkedList<Processo> listaProximos = new LinkedList<>(processos);
+        ordenar(listaProximos, comparador);
+        return listaProximos;
+    }
+
+    
+
+    protected void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
+        while(!fila.isEmpty())
+            fila.poll();
+
+        for(int i = 0; i < lista.size(); i++) {
+            fila.add(lista.get(i));
+        }
     }
 
     public abstract void escalonar();

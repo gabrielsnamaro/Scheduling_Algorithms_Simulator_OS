@@ -78,22 +78,19 @@ public class MultilevelQueue extends Escalonador {
         }
     }
 
-    Scanner teclado;
     Queue<Processo> filaAlta;
     Queue<Processo> filaBaixa;
-    Queue<Processo> espera;    
-    static final int QUANTUM = 5;
+    private static final int QUANTUM = 5;
 
     public MultilevelQueue(LinkedList<Processo> processos) {
         super(processos);
+        filaAlta = new LinkedList<>();
+        filaBaixa = new LinkedList<>();
     }
 
     @Override
     public void escalonar() {
         Queue<Processo> todos = organizarProximosProcessos();
-        filaAlta = new LinkedList<>();
-        filaBaixa = new LinkedList<>();
-        espera = new LinkedList<>();
 
         int instanteAtual = 0;
 
@@ -195,15 +192,6 @@ public class MultilevelQueue extends Escalonador {
         LinkedList<Processo> lista = new LinkedList<>(todos);
         ordenar(lista, comparador);
         transferirListaParaFila(todos, lista);
-    }
-
-    private void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
-        while(!fila.isEmpty())
-            fila.poll();
-
-        for(int i = 0; i < lista.size(); i++) {
-            fila.add(lista.get(i));
-        }
     }
 
     private Queue<Processo>[] extrairParaFilas(Queue<Processo> processos) {

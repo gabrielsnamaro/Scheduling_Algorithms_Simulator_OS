@@ -1,12 +1,5 @@
-public class InterrupcaoIO extends Exception {
-    private int novoInstante;
-
+public class InterrupcaoIO extends Interrupcao {
     public InterrupcaoIO(String message, int novoInstante) {
-        super(message);
-        this.novoInstante = novoInstante;
-    }
-
-    public int getNovoInstante() {
-        return novoInstante;
+        super(message, novoInstante);
     }
 }
