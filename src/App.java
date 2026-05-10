@@ -39,6 +39,8 @@ public class App {
                 escalonador.escalonar();
                 break;
             case 3:
+                escalonador = new ShortestRemainingTimeFirst(processos);
+                escalonador.escalonar();
                 break;
             case 4:
                 break;
