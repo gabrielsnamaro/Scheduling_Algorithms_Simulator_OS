@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Queue;
 
 public abstract class Escalonador {
-    protected static class Execucao {
+    protected static class RegistroExecucao {
         protected int instanteInicial;
         protected int instanteFinal;
         protected Processo processo;
@@ -13,7 +13,7 @@ public abstract class Escalonador {
         protected Boolean terminou;
         protected Boolean cpuOciosa;
 
-        public Execucao() {
+        public RegistroExecucao() {
             houveIO = false;
             terminou = false;
             cpuOciosa = false;

@@ -18,7 +18,7 @@ public class FirstComeFirstServed extends Escalonador {
         adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
 
         while((proximosProcessos.size() + processosEmEspera.size() + processosProntos.size()) > 0) {
-            Execucao execucaoAtual = new Execucao();
+            RegistroExecucao execucaoAtual = new RegistroExecucao();
             
             if(!processosProntos.isEmpty()) {
                 Processo atual = processosProntos.poll();

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class RoundRobin extends Escalonador {
-    private static class ExecucaoRR extends Execucao {
+    private static class ExecucaoRR extends RegistroExecucao {
 
         private int quantumPrevisto;
         private Boolean quantumTerminou;

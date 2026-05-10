@@ -151,6 +151,9 @@ public class Processo {
         return instanteDeChegada;
     }
 
+    public int getBurstTotal() {
+        return burstTotal;
+    }
 
 
 

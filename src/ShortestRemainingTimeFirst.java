@@ -18,7 +18,7 @@ public class ShortestRemainingTimeFirst extends Escalonador {
 
         int instanteAtual = 0;
         while((prontos.size() + proximos.size() + espera.size()) > 0) {
-            Execucao execucao = new Execucao();
+            RegistroExecucao execucao = new RegistroExecucao();
 
             adicionarEmChegada(prontos, proximos, instanteAtual);
             adicionarDaEspera(prontos, instanteAtual);

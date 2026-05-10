@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class MultilevelQueue extends Escalonador {
-    private static class ExecucaoMLQ extends Execucao {
+    private static class ExecucaoMLQ extends RegistroExecucao {
         private String filaAlta;
         private String filaBaixa;
         private Boolean quantumTerminou;
