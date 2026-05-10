@@ -97,6 +97,12 @@ public abstract class Escalonador {
         processos.sort(comparador);
     }
 
+    protected void ordenar(Queue<Processo> processos, Comparator<Processo> comparador) {
+        LinkedList<Processo> lista = new LinkedList<>(processos);
+        lista.sort(comparador);
+        transferirListaParaFila(processos, lista);
+    }
+
     protected LinkedList<Processo> organizarProximosProcessos() {
         LinkedList<Processo> listaProximos = new LinkedList<>(processos);
         ordenar(listaProximos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
@@ -108,8 +114,6 @@ public abstract class Escalonador {
         ordenar(listaProximos, comparador);
         return listaProximos;
     }
-
-    
 
     protected void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
         while(!fila.isEmpty())

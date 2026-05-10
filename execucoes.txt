@@ -1,128 +1,227 @@
-********** 0s até 1s **********
+********** 0s até 2s **********
 * Fila de pronto: 1. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 9
-
-
-********** 1s até 2s **********
-* Fila de pronto: 2, 1. 
-* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 7
-
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 8
+* Quantum terminou!
 
 ********** 2s até 3s **********
-* Fila de pronto: 2, 1, 3. 
-* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 6
-
-
-********** 3s até 4s **********
-* Fila de pronto: 2, 4, 1, 3. 
-* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 5
-
-
-********** 4s até 5s **********
-* Fila de pronto: 2, 4, 1, 5, 3. 
-* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 4
-* Fez IO!
-
-********** 5s até 6s **********
-* Fila de pronto: 4, 1, 5, 3, 6. 
-* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 5
-
-
-********** 6s até 7s **********
-* Fila de pronto: 4, 7, 1, 5, 3, 6. 
-* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 4
-* Fez IO!
-
-********** 7s até 10s **********
-* Fila de pronto: 7, 1, 5, 3, 6. 
-* Processo executado: PID: 07 | Chegada: 6 | Burst Restante: 2
-
-
-********** 10s até 12s **********
-* Fila de pronto: 7, 2, 1, 5, 3, 6. 
-* Processo executado: PID: 07 | Chegada: 6 | Burst Restante: 0
-* Processo terminou!
-
-********** 12s até 16s **********
-* Fila de pronto: 2, 4, 1, 5, 3, 6. 
-* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 0
-* Processo terminou!
-
-********** 16s até 20s **********
-* Fila de pronto: 4, 1, 5, 3, 6. 
-* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 0
-* Processo terminou!
-
-********** 20s até 22s **********
-* Fila de pronto: 1, 5, 3, 6. 
+* Fila de pronto: 1, 2, 3. 
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 7
 * Fez IO!
 
-********** 22s até 27s **********
-* Fila de pronto: 5, 3, 6. 
-* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 7
+********** 3s até 5s **********
+* Fila de pronto: 2, 3, 4. 
+* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 6
+* Quantum terminou!
+
+********** 5s até 7s **********
+* Fila de pronto: 3, 4, 2, 5, 6. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 13
+* Quantum terminou!
+
+********** 7s até 9s **********
+* Fila de pronto: 4, 2, 5, 6, 3, 7. 
+* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 4
 * Fez IO!
 
-********** 27s até 31s **********
-* Fila de pronto: 1, 3, 6. 
+********** 9s até 11s **********
+* Fila de pronto: 2, 5, 6, 3, 7, 1. 
+* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 4
+* Fez IO!
+
+********** 11s até 13s **********
+* Fila de pronto: 5, 6, 3, 7, 1. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 10
+* Quantum terminou!
+
+********** 13s até 15s **********
+* Fila de pronto: 6, 3, 7, 1, 5. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 18
+* Quantum terminou!
+
+********** 15s até 17s **********
+* Fila de pronto: 3, 7, 1, 5, 6, 4. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 11
+* Quantum terminou!
+
+********** 17s até 19s **********
+* Fila de pronto: 7, 1, 5, 6, 4, 3, 2. 
+* Processo executado: PID: 07 | Chegada: 6 | Burst Restante: 3
+* Quantum terminou!
+
+********** 19s até 21s **********
+* Fila de pronto: 1, 5, 6, 4, 3, 2, 7. 
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 5
+* Quantum terminou!
+
+********** 21s até 23s **********
+* Fila de pronto: 5, 6, 4, 3, 2, 7, 1. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 8
+* Quantum terminou!
+
+********** 23s até 25s **********
+* Fila de pronto: 6, 4, 3, 2, 7, 1, 5. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 16
+* Quantum terminou!
+
+********** 25s até 27s **********
+* Fila de pronto: 4, 3, 2, 7, 1, 5, 6. 
+* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 2
+* Quantum terminou!
+
+********** 27s até 29s **********
+* Fila de pronto: 3, 2, 7, 1, 5, 6, 4. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 9
+* Quantum terminou!
+
+********** 29s até 31s **********
+* Fila de pronto: 2, 7, 1, 5, 6, 4, 3. 
+* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 2
+* Quantum terminou!
+
+********** 31s até 33s **********
+* Fila de pronto: 7, 1, 5, 6, 4, 3, 2. 
+* Processo executado: PID: 07 | Chegada: 6 | Burst Restante: 1
+* Quantum terminou!
+
+********** 33s até 35s **********
+* Fila de pronto: 1, 5, 6, 4, 3, 2, 7. 
 * Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 3
 * Fez IO!
 
-********** 31s até 32s **********
-* Fila de pronto: 3, 6. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 14
-
-
-********** 32s até 36s **********
-* Fila de pronto: 5, 3, 6. 
-* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 3
+********** 35s até 36s **********
+* Fila de pronto: 5, 6, 4, 3, 2, 7. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 7
 * Fez IO!
 
-********** 36s até 39s **********
-* Fila de pronto: 1, 3, 6. 
-* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
-* Processo terminou!
-
-********** 39s até 41s **********
-* Fila de pronto: 3, 6. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 12
-
-
-********** 41s até 44s **********
-* Fila de pronto: 5, 3, 6. 
-* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 0
-* Processo terminou!
-
-********** 44s até 56s **********
-* Fila de pronto: 3, 6. 
-* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 0
-* Processo terminou!
-
-********** 56s até 62s **********
-* Fila de pronto: 6. 
+********** 36s até 38s **********
+* Fila de pronto: 6, 4, 3, 2, 7. 
 * Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 14
 * Fez IO!
 
-********** 62s até 67s **********
-* CPU ociosa...
+********** 38s até 40s **********
+* Fila de pronto: 4, 3, 2, 7. 
+* Processo executado: PID: 04 | Chegada: 3 | Burst Restante: 0
+* Processo terminou!
 
-********** 67s até 73s **********
-* Fila de pronto: 6. 
+********** 40s até 42s **********
+* Fila de pronto: 3, 2, 7, 1. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 7
+* Quantum terminou!
+
+********** 42s até 44s **********
+* Fila de pronto: 2, 7, 1, 3, 5. 
+* Processo executado: PID: 02 | Chegada: 1 | Burst Restante: 0
+* Processo terminou!
+
+********** 44s até 45s **********
+* Fila de pronto: 7, 1, 3, 5, 6. 
+* Processo executado: PID: 07 | Chegada: 6 | Burst Restante: 0
+* Processo terminou!
+
+********** 45s até 47s **********
+* Fila de pronto: 1, 3, 5, 6. 
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 1
+* Quantum terminou!
+
+********** 47s até 49s **********
+* Fila de pronto: 3, 5, 6, 1. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 5
+* Quantum terminou!
+
+********** 49s até 51s **********
+* Fila de pronto: 5, 6, 1, 3. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 5
+* Quantum terminou!
+
+********** 51s até 53s **********
+* Fila de pronto: 6, 1, 3, 5. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 12
+* Quantum terminou!
+
+********** 53s até 54s **********
+* Fila de pronto: 1, 3, 5, 6. 
+* Processo executado: PID: 01 | Chegada: 0 | Burst Restante: 0
+* Processo terminou!
+
+********** 54s até 56s **********
+* Fila de pronto: 3, 5, 6. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 3
+* Quantum terminou!
+
+********** 56s até 58s **********
+* Fila de pronto: 5, 6, 3. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 3
+* Fez IO!
+
+********** 58s até 60s **********
+* Fila de pronto: 6, 3. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 10
+* Quantum terminou!
+
+********** 60s até 62s **********
+* Fila de pronto: 3, 6. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 1
+* Quantum terminou!
+
+********** 62s até 64s **********
+* Fila de pronto: 6, 3. 
 * Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 8
 * Fez IO!
 
-********** 73s até 78s **********
+********** 64s até 65s **********
+* Fila de pronto: 3, 5. 
+* Processo executado: PID: 03 | Chegada: 2 | Burst Restante: 0
+* Processo terminou!
+
+********** 65s até 67s **********
+* Fila de pronto: 5. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 1
+* Quantum terminou!
+
+********** 67s até 68s **********
+* Fila de pronto: 5. 
+* Processo executado: PID: 05 | Chegada: 4 | Burst Restante: 0
+* Processo terminou!
+
+********** 68s até 69s **********
 * CPU ociosa...
 
-********** 78s até 83s **********
+********** 69s até 71s **********
+* Fila de pronto: 6. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 6
+* Quantum terminou!
+
+********** 71s até 73s **********
+* Fila de pronto: 6. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 4
+* Quantum terminou!
+
+********** 73s até 74s **********
 * Fila de pronto: 6. 
 * Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 3
 * Fez IO!
 
-********** 83s até 88s **********
+********** 74s até 75s **********
 * CPU ociosa...
 
-********** 88s até 91s **********
+********** 75s até 76s **********
+* CPU ociosa...
+
+********** 76s até 77s **********
+* CPU ociosa...
+
+********** 77s até 78s **********
+* CPU ociosa...
+
+********** 78s até 79s **********
+* CPU ociosa...
+
+********** 79s até 81s **********
+* Fila de pronto: 6. 
+* Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 1
+* Quantum terminou!
+
+********** 81s até 82s **********
 * Fila de pronto: 6. 
 * Processo executado: PID: 06 | Chegada: 5 | Burst Restante: 0
 * Processo terminou!

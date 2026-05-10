@@ -35,7 +35,7 @@ public class App {
     }
 
     private static void executar(int opcao, LinkedList<Processo> processos) throws IllegalArgumentException {
-        Escalonador escalonador;
+        Escalonador escalonador = null;
 
         switch (opcao) {
             case 1:
@@ -43,23 +43,23 @@ public class App {
                 break;
             case 2:
                 escalonador = new FirstComeFirstServed(processos);
-                escalonador.escalonar();
                 break;
             case 3:
                 escalonador = new ShortestRemainingTimeFirst(processos);
-                escalonador.escalonar();
                 break;
             case 4:
+                escalonador = new RoundRobin(processos);
                 break;
             case 5:
                 escalonador = new MultilevelQueue(processos);
-                escalonador.escalonar();
                 break;
             case 0:
                 break;
             default:
                 throw new IllegalArgumentException("Opção inválida!");
         }
+
+        if(escalonador != null) escalonador.escalonar();
     }
 
     private static void printList(List<Processo> lista) {

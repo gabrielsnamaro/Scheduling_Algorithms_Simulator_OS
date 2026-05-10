@@ -8,9 +8,6 @@ public class MultilevelQueue extends Escalonador {
     private static class ExecucaoMLQ extends Execucao {
         private String filaAlta;
         private String filaBaixa;
-        private Boolean houveIO;
-        private Boolean terminou;
-        private Boolean cpuOciosa;
         private Boolean quantumTerminou;
 
         public ExecucaoMLQ() {
