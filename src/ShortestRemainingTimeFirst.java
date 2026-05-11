@@ -1,8 +1,6 @@
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class ShortestRemainingTimeFirst extends Escalonador {
     private static final Comparator<Processo> COMPARADOR_PADRAO = (p1, p2) -> Integer.compare(p1.getBurstRestante(), p2.getBurstRestante());
@@ -73,10 +71,6 @@ public class ShortestRemainingTimeFirst extends Escalonador {
         );
     }
 
-    private void esperar(Scanner teclado) {
-        teclado.nextLine();
-    }
-
     private void adicionarEmChegada(Queue<Processo> prontos, Queue<Processo> proximos, int instante) {
         while (!proximos.isEmpty() && proximos.element().getInstanteChegada() <= instante) {
             prontos.add(proximos.poll());
@@ -86,12 +80,6 @@ public class ShortestRemainingTimeFirst extends Escalonador {
     private void adicionarDaEspera(Queue<Processo> prontos, int instante) {
         while(!espera.isEmpty() && espera.element().proximoRetornoDeIO() <= instante) {
             prontos.add(espera.poll());
-        }
-    }
-
-    private static void printList(List<Processo> lista) {
-        for(Processo p : lista) {
-            System.out.println(p);
         }
     }
 }

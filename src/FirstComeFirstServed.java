@@ -78,12 +78,4 @@ public class FirstComeFirstServed extends Escalonador {
             && filaDeEspera.element().proximoRetornoDeIO() <= instanteAtual)
             filaDeExecucao.add(filaDeEspera.poll());
     }
-
-    private static void printList(Queue<Processo> lista) {
-        for(Processo p : lista) {
-            System.out.print(p.getPid() + " | ");
-        }
-
-        System.out.println();
-    }
 }

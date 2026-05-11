@@ -126,11 +126,4 @@ public class RoundRobin extends Escalonador {
             prontos.add(espera.poll());
         }
     }
-
-    private static void printList(List<Processo> lista) {
-        for(Processo p : lista) {
-            System.out.println(p);
-        }
-    }
-    
 }

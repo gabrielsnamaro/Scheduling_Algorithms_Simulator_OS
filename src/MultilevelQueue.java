@@ -1,8 +1,6 @@
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class MultilevelQueue extends Escalonador {
     private static class ExecucaoMLQ extends RegistroExecucao {
