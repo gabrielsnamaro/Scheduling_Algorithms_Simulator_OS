@@ -1,15 +1,13 @@
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
 public class MultilevelQueue extends Escalonador {
-    private class ExecucaoMLQ extends Execucao {
+    private static class ExecucaoMLQ extends RegistroExecucao {
         private String filaAlta;
         private String filaBaixa;
-        private Boolean houveIO;
-        private Boolean terminou;
-        private Boolean cpuOciosa;
         private Boolean quantumTerminou;
 
         public ExecucaoMLQ() {
@@ -54,7 +52,7 @@ public class MultilevelQueue extends Escalonador {
         }
 
         public String registro() {
-            String registro = "********** " + instanteInicial + "s até " + instanteFinal + "s **********\n";
+            String registro = "********** " + instanteInicial + "ms até " + instanteFinal + "ms **********\n";
             
             if(!cpuOciosa) {
                 registro += "* Processo executado: " + processo.estadoAtual() + "\n* Fila alta: " + filaAlta + "\n* Fila baixa: " + filaBaixa + "\n";
@@ -77,24 +75,19 @@ public class MultilevelQueue extends Escalonador {
         }
     }
 
-    Scanner teclado;
     Queue<Processo> filaAlta;
     Queue<Processo> filaBaixa;
-    Queue<Processo> espera;    
-    static final int QUANTUM = 5;
+    private static final int QUANTUM = 5;
 
     public MultilevelQueue(LinkedList<Processo> processos) {
         super(processos);
+        filaAlta = new LinkedList<>();
+        filaBaixa = new LinkedList<>();
     }
 
     @Override
     public void escalonar() {
-        LinkedList<Processo> listaTodos = new LinkedList<>(processos);
-        ordenar(listaTodos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
-        Queue<Processo> todos = listaTodos;
-        filaAlta = new LinkedList<>();
-        filaBaixa = new LinkedList<>();
-        espera = new LinkedList<>();
+        Queue<Processo> todos = organizarProximosProcessos();
 
         int instanteAtual = 0;
 
@@ -102,24 +95,22 @@ public class MultilevelQueue extends Escalonador {
             ExecucaoMLQ execucao = new ExecucaoMLQ();
 
             adicionarProcessosChegando(todos, instanteAtual);
+            adicionarDaEspera(instanteAtual);
 
             execucao.setFilaAlta(filaAlta);
             execucao.setFilaBaixa(filaBaixa);
-
-            adicionarDaEspera(instanteAtual);
+            execucao.setInstanteInicial(instanteAtual);
 
             if(!filaAlta.isEmpty())
                 instanteAtual = executarFilaAlta(instanteAtual, execucao);
             else if(!filaBaixa.isEmpty())
                 instanteAtual = executarFilaBaixa(instanteAtual, execucao);
             else {
-                execucao.setInstanteInicial(instanteAtual);
                 execucao.reportarOcio();
                 instanteAtual++;
-                execucao.setInstanteFinal(instanteAtual);
             }
 
-            execucao.imprimir();
+            execucao.setInstanteFinal(instanteAtual);
             Escritor.registrar(execucao.registro());
         }
 
@@ -128,25 +119,24 @@ public class MultilevelQueue extends Escalonador {
     private int executarFilaAlta(int instante, ExecucaoMLQ execucao) {
         Processo atual = filaAlta.poll();
         int novoInstante;
-
-        execucao.setInstanteInicial(instante);
+        
         execucao.setProcesso(atual);
+        MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instante);
 
         try {
             atual.avancar(QUANTUM, instante);
             novoInstante = instante + QUANTUM;
             filaAlta.add(atual);
-            execucao.reportarQuantum();
         } catch(InterrupcaoIO e) {
             novoInstante = e.getNovoInstante();
             espera.add(atual);
+            metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
             execucao.reportarIO();
         } catch(InterrupcaoEncerramento e) {
             novoInstante = e.getNovoInstante();
+            metrica.setInstanteDeTermino(novoInstante);
             execucao.reportarFinalizado();
-        } 
-
-        execucao.setInstanteFinal(novoInstante);
+        }
 
         return novoInstante;
     }
@@ -156,7 +146,7 @@ public class MultilevelQueue extends Escalonador {
         int novoInstante;
 
         execucao.setProcesso(atual);
-        execucao.setInstanteInicial(instante);
+        MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instante);
 
         try {
             atual.avancar(1, instante);
@@ -164,14 +154,14 @@ public class MultilevelQueue extends Escalonador {
         } catch(InterrupcaoIO e) {
             novoInstante = e.getNovoInstante();
             espera.add(filaBaixa.poll());
+            metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
             execucao.reportarIO();
         } catch(InterrupcaoEncerramento e) {
             novoInstante = e.getNovoInstante();
-            execucao.reportarFinalizado();
             filaBaixa.poll();
-        } 
-
-        execucao.setInstanteFinal(novoInstante);
+            metrica.setInstanteDeTermino(novoInstante);
+            execucao.reportarFinalizado();
+        }
 
         return novoInstante;
     }
@@ -191,10 +181,7 @@ public class MultilevelQueue extends Escalonador {
             && naPrioridadeBaixa.element().proximoRetornoDeIO() <= instante)
         filaBaixa.add(naPrioridadeBaixa.poll());
 
-        restaurar(espera, filas);
-        LinkedList<Processo> lista = new LinkedList<>(espera);
-        ordenar(lista, (p1, p2) -> Integer.compare(p1.proximoRetornoDeIO(), p2.proximoRetornoDeIO()));
-        transferirListaParaFila(espera, lista);
+        restaurarDasFilas(espera, filas, (p1, p2) -> Integer.compare(p1.proximoRetornoDeIO(), p2.proximoRetornoDeIO()));
     }
 
     private void adicionarProcessosChegando(Queue<Processo> todos, int instante) {
@@ -210,27 +197,19 @@ public class MultilevelQueue extends Escalonador {
             filaBaixa.add(naPrioridadeBaixa.poll());
         }
 
-        restaurar(todos, filas);
-        LinkedList<Processo> lista = new LinkedList<>(todos);
-        ordenar(lista, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
-        transferirListaParaFila(todos, lista);
+        restaurarDasFilas(todos, filas, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
     }
 
-    private void restaurar(Queue<Processo> todos, Queue<Processo>[] filas) {
+    private void restaurarDasFilas(Queue<Processo> todos, Queue<Processo>[] filas, Comparator<Processo> comparador) {
         while(!filas[0].isEmpty())
             todos.add(filas[0].poll());
 
         while(!filas[1].isEmpty())
             todos.add(filas[1].poll());
-    }
 
-    private void transferirListaParaFila(Queue<Processo> fila, List<Processo> lista) {
-        while(!fila.isEmpty())
-            fila.poll();
-
-        for(int i = 0; i < lista.size(); i++) {
-            fila.add(lista.get(i));
-        }
+        LinkedList<Processo> lista = new LinkedList<>(todos);
+        ordenar(lista, comparador);
+        transferirListaParaFila(todos, lista);
     }
 
     private Queue<Processo>[] extrairParaFilas(Queue<Processo> processos) {

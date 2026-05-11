@@ -11,8 +11,15 @@ public class App {
         do {
             lista = Leitor.doArquivo();
             opcao = menu(teclado);
-            executar(opcao, lista);
+
+            try {
+                executar(opcao, lista);
+            } catch(IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+
             esperar(teclado);
+            limparTela();
         } while(opcao != 0);
     }
 
@@ -27,8 +34,9 @@ public class App {
         return lerInteiro(menu, teclado);
     }
 
-    private static void executar(int opcao, LinkedList<Processo> processos) {
-        Escalonador escalonador;
+    private static void executar(int opcao, LinkedList<Processo> processos) throws IllegalArgumentException {
+        Escalonador escalonador = null;
+        Escritor.limpar();
 
         switch (opcao) {
             case 1:
@@ -36,21 +44,26 @@ public class App {
                 break;
             case 2:
                 escalonador = new FirstComeFirstServed(processos);
-                escalonador.escalonar();
                 break;
             case 3:
+                escalonador = new ShortestRemainingTimeFirst(processos);
                 break;
             case 4:
+                escalonador = new RoundRobin(processos);
                 break;
             case 5:
                 escalonador = new MultilevelQueue(processos);
-                escalonador.escalonar();
                 break;
             case 0:
                 break;
             default:
-                System.out.println("Opção inválida!");
-                break;
+                throw new IllegalArgumentException("Opção inválida!");
+        }
+
+        if(escalonador != null) {
+            escalonador.escalonar();
+            
+            System.out.println("\n\n" + escalonador.metricas());
         }
     }
 

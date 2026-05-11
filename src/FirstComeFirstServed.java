@@ -9,9 +9,7 @@ public class FirstComeFirstServed extends Escalonador {
 
     @Override
     public void escalonar() {
-        LinkedList<Processo> listaProximos = new LinkedList<>(processos);
-        ordenar(listaProximos, (p1, p2) -> Integer.compare(p1.getInstanteChegada(), p2.getInstanteChegada()));
-        Queue<Processo> proximosProcessos = listaProximos;
+        Queue<Processo> proximosProcessos = organizarProximosProcessos();
 
         Queue<Processo> processosProntos = new LinkedList<>();
         Queue<Processo> processosEmEspera = new LinkedList<>();
@@ -20,30 +18,34 @@ public class FirstComeFirstServed extends Escalonador {
         adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
 
         while((proximosProcessos.size() + processosEmEspera.size() + processosProntos.size()) > 0) {
-            Execucao execucaoAtual = new Execucao();
-
+            RegistroExecucao execucaoAtual = new RegistroExecucao();
+            execucaoAtual.setFilaDePronto(processosProntos);
             execucaoAtual.setInstanteInicial(instanteAtual);
-
+            
             if(!processosProntos.isEmpty()) {
                 Processo atual = processosProntos.poll();
-                int tempoAvanco = atual.getBurstRestante();
+    
+                MetricaIndividual metrica = metricaGeral.gerarMetrica(atual, instanteAtual);
 
-                execucaoAtual.setFilaDePronto(processosProntos);
                 execucaoAtual.setProcesso(atual);
+
+                int tempoAvanco = atual.getBurstRestante();
 
                 try {
                     instanteAtual = atual.avancar(tempoAvanco, instanteAtual);
                 } catch (InterrupcaoIO e) {
                     instanteAtual = e.getNovoInstante();
                     processosEmEspera.add(atual);
+
+                    metrica.adicionarTempoEmIO(Processo.TEMPO_BLOQUEIO_IO);
                     execucaoAtual.reportarIO();
                 } catch (InterrupcaoEncerramento e) {
                     instanteAtual = e.getNovoInstante();
+
+                    metrica.setInstanteDeTermino(instanteAtual);
                     execucaoAtual.reportarFinalizado();
                 }
             } else {
-                execucaoAtual.reportarOcio();
-
                 instanteAtual += Math.min(
                     processosEmEspera.isEmpty()
                         ? Integer.MAX_VALUE
@@ -52,11 +54,11 @@ public class FirstComeFirstServed extends Escalonador {
                         ? Integer.MAX_VALUE
                         : proximosProcessos.element().getInstanteChegada()
                 ) - instanteAtual;
+
+                execucaoAtual.reportarOcio();
             }
 
             execucaoAtual.setInstanteFinal(instanteAtual);
-
-            execucaoAtual.imprimir();
             Escritor.registrar(execucaoAtual.registro());
 
             adicionarProcessosEmChegada(proximosProcessos, processosProntos, instanteAtual);
@@ -84,12 +86,4 @@ public class FirstComeFirstServed extends Escalonador {
 
         System.out.println();
     }
-
-    /* APAGAR
-    public static void esperarEnter() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Pressione Enter para continuar...");
-        scanner.nextLine();  // Aguarda o Enter
-        // Não precisa fechar o scanner se ele for usado novamente depois
-    }*/
 }

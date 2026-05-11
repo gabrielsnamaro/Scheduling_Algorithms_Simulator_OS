@@ -14,7 +14,7 @@ public class Escritor {
         limpar();
     }
 
-    private static void limpar() {
+    public static void limpar() {
         try {
             escritor = new FileWriter(NOME_ARQUIVO);
             escritor.close();
