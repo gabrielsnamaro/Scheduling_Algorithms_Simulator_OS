@@ -18,11 +18,15 @@ public class MetricaIndividual {
         tempoEmIO += tempo;
     }
 
-    private int calcularEspera() {
+    public int calcularEspera() {
         int esperaParaComecar = instanteDeInicio - processo.getInstanteChegada();
         int esperaAposIniciar = ((instanteDeTermino - instanteDeInicio) - processo.getBurstTotal()) - tempoEmIO;
 
         return esperaParaComecar + esperaAposIniciar;
+    }
+
+    public int retorno() {
+        return instanteDeTermino - processo.getInstanteChegada();
     }
 
     public int getTermino() {

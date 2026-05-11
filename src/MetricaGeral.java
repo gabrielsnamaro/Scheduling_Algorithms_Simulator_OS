@@ -61,9 +61,29 @@ public class MetricaGeral {
         return retorno;
     }
 
+    private double esperaMedia() {
+        double total = 0;
+
+        for (Map.Entry<Integer, MetricaIndividual> entrada : processosRegistrados.entrySet()) {
+            total += entrada.getValue().calcularEspera();
+        }
+
+        return total / processosRegistrados.size();
+    }
+
+    private double retornoMedio() {
+        double total = 0;
+
+        for (Map.Entry<Integer, MetricaIndividual> entrada : processosRegistrados.entrySet()) {
+            total += entrada.getValue().retorno();
+        }
+
+        return total / processosRegistrados.size();
+    }
+
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(String.format("************ MÉTRICAS DE EXECUÇÃO ************\n* Vazão: aproximadamente %.2f processos por segundo\n*\n", vazao()));
+        StringBuilder builder = new StringBuilder(String.format("************ MÉTRICAS DE EXECUÇÃO ************\n* Vazão: aproximadamente %.2f processos por segundo\n* Espera média: aproximadamente %.2f ms\n* Retorno médio: %.2f ms\n*\n", vazao(), esperaMedia(), retornoMedio()));
 
         for(Map.Entry<Integer, MetricaIndividual> individual : processosRegistrados.entrySet()) {
             builder.append(individual.getValue().toString());
